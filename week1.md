@@ -218,7 +218,7 @@ Laboratory Exercise for Week 1 (10 points)
 
 *Directions*:
 
--   Download this week's exercise file and open the file using RStudio.
+-   Download this week's exercise file and open the file using RStudio. Right click the link and "Save as..." to your desktop. (<https://goo.gl/noVy6g>)
 -   This file type is called RMarkdown and is used widely to share and collaborate R outputs. More information is found on this link (<http://rmarkdown.rstudio.com/articles_docx.html>).
 -   All R codes should be written inside code chunks. Check (<http://rmarkdown.rstudio.com/authoring_rcodechunks.html>).
 -   Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
