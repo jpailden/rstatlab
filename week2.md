@@ -1,6 +1,8 @@
-Week 2: Data Management and Exploration
+Week 2: Reading Data and Initial Exploration
 ================
 written by Junvie Pailden
+
+### Data Set Structure
 
 A data set usually includes variables (columns) and observations (rows). We can check the structure of the data using the function `str()`. The output includes data information such as
 
@@ -13,8 +15,8 @@ A data set usually includes variables (columns) and observations (rows). We can 
     -   `chr`: character
     -   `Factor`: categorical with defined levels
 
-Working with data provided by R packages
-----------------------------------------
+1) Working with data provided by R packages
+-------------------------------------------
 
 Lets consider the data `chickwts` in the package `datasets` included with every R installation. The data was the result of an experiment conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens.
 
@@ -51,8 +53,7 @@ chickwts[, 2] # display column 2, or use chickwts$feed
 # Levels: casein horsebean linseed meatmeal soybean sunflower
 ```
 
-Mosaic package
---------------
+### Mosaic package
 
 The `mosaic` package was written to simplify the use of R for introductory statistics courses. A short summary of the R needed to teach introductory statistics can be found in the mosaic package vignettes (<http://cran.r-project.org/web/packages/mosaic>).
 
@@ -122,13 +123,13 @@ favstats(weight ~ feed, data = chickwts)
 
 The `mosaic` package also includes commands for common graphical summaries.
 
-Bargraph
+Bargraph for Categorical Variables
 
 ``` r
 bargraph(~ feed, data = chickwts)
 ```
 
-<img src="figures/11-wk02-1.png" style="display: block; margin: auto;" /> Dot Plots
+<img src="figures/11-wk02-1.png" style="display: block; margin: auto;" /> Dot Plots are used often to describe small size numerical data sets.
 
 ``` r
 dotPlot(~ weight, data = chickwts)
@@ -136,7 +137,7 @@ dotPlot(~ weight, data = chickwts)
 
 <img src="figures/12-wk02-1.png" style="display: block; margin: auto;" />
 
-Histograms
+Histograms are used often to describe moderate to large size numerical data sets.
 
 ``` r
 histogram(~ weight, data = chickwts)
@@ -150,7 +151,15 @@ The formula interface syntax is used for graphical summaries, numerical summarie
 
 > `goal(y ~ x | z,  data = ..., groups = ...)`
 
-For plots, \* `y`: y-axis variable \* `x`: x-axis variable \* `z`: z-axis variable \* `groups`: conditioning variable (overlaid graphs)
+For plots,
+
+-   `y`: y-axis variable
+
+-   `x`: x-axis variable
+
+-   `z`: z-axis variable
+
+-   `groups`: conditioning variable (overlaid graphs)
 
 Dotplots for `weight` across different `feed` panels.
 
@@ -166,12 +175,12 @@ bwplot(weight ~ feed, data = chickwts)
 
 <img src="figures/15-wk02-1.png" style="display: block; margin: auto;" />
 
-Reading CSV data in R
----------------------
+2) Reading CSV data in R
+------------------------
 
 Data analysis using R often involves importing or reading data at some point. While R can read other data types, comma separated files (.csv) are much easier to work with. Saving data files in .csv format is standard in practice. We use the command `read.csv` to read .csv data in R.
 
-### Loading a data set from a webpage using its URL (Universal Resource Locator).
+### A) Loading a data set from a webpage using its URL (Universal Resource Locator).
 
 The article *Going Wireless (AARP Bulletin, June 2009)* reported the estimated percentage of house- holds with only wireless phone service (no land line) for the 50 U.S. states and the District of Columbia. In the accompanying data table, each state was also classified into one of three geographical regions—West (W), Middle states (M), and East (E).
 
@@ -225,7 +234,7 @@ bwplot(Wireless ~ Region, data = wireless.data) # boxplots
 
 <img src="figures/20-wk02-2.png" style="display: block; margin: auto;" />
 
-### Loading a Data Set from the Working Directory.
+### B) Loading a Data Set from the Working Directory.
 
 R is always pointed at a directory/folder on your machine where it looks for data sets and source files. To check your current working directory, you can run the command `getwd()` in the RStudio console.
 
@@ -264,7 +273,9 @@ favstats(~ Rate.per.10K.Flights, data = delay)
 histogram(~ Rate.per.10K.Flights, data = delay)
 ```
 
-<img src="figures/21-wk02-1.png" style="display: block; margin: auto;" /> Scatterplot with `Delays` on the horizontal axis and `Rate.per.10K.Flights` on the vertical axis.
+<img src="figures/21-wk02-1.png" style="display: block; margin: auto;" />
+
+Scatterplot with `Delays` on the horizontal axis and `Rate.per.10K.Flights` on the vertical axis.
 
 ``` r
 xyplot(Rate.per.10K.Flights ~ Delays, data = delay)

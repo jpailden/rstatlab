@@ -201,8 +201,6 @@ For example, when looking for information on computing the average or mean of a 
 
 ``` r
 help("mean") # or
-# starting httpd help server ...
-#  done
 ?mean        # scroll to the bottom to see examples
 x <- c(0:10, 50)
 x
@@ -220,7 +218,7 @@ Laboratory Exercise for Week 1 (10 points)
 
 -   Download this week's exercise file and open the file using RStudio. Right click the link and "Save as..." to your desktop. (<https://goo.gl/noVy6g>)
 -   This file type is called RMarkdown and is used widely to share and collaborate R outputs. More information is found on this link (<http://rmarkdown.rstudio.com/articles_docx.html>).
--   All R codes should be written inside code chunks. Check (<http://rmarkdown.rstudio.com/authoring_rcodechunks.html>).
+-   All R codes should be written inside the code chunks. Check (<http://rmarkdown.rstudio.com/authoring_rcodechunks.html>).
 -   Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
 
 1.  Create a vector of three elements `(2,4,6)` and name that vector `vec.a`. Create a second vector, `vec.b`, that contains `(8,10,12)`.
