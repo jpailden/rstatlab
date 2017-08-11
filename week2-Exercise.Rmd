@@ -19,7 +19,37 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-1. 1. The `RailTrail` dataset within the `mosaic` package includes the counts of crossings of a rail trail in Northampton, Massachusetts for 90 days in 2005. City officials are interested in understanding usage of the trail network, and how it changes as a function of temperature and day of the week.
+1. You will work with a matrix whose entries are all prime numbers below 30.
+      i)  Create this matrix using the function `matrix()` with five rows. Save the matrix as `P`.
+      ii) Extract the second and third row out of `P`.
+      iii) Extract the entry in the fourth row and first column of `P.
+      iv) Generate the transpose of the matrix using the function `t()`. What is the new dimension of this matrix.
+
+## Code chunk
+```{r}
+# Insert your code for this question after this line
+
+
+```
+
+2. Create and manipulate a data frame.
+      i) Create a `data.frame` named `my.trees` that has the following columns:
+          - `Girth = c(8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0)`
+          - `Height = c(70, 65, 63, 72, 81, 83, 66)`
+          - `Volume = c(10.3, 10.3, 10.2, 16.4, 18.8, 19.7, 15.6)`
+      ii) Extract the fifth observational unit.
+      iii) Extract the `Girth` column referring to it by name.
+      iv) Print out a data frame of all the observations except for the last observation.
+
+
+## Code chunk
+```{r}
+# Insert your code for this question after this line
+
+
+```
+
+3. The `RailTrail` dataset within the `mosaic` package includes the counts of crossings of a rail trail in Northampton, Massachusetts for 90 days in 2005. City officials are interested in understanding usage of the trail network, and how it changes as a function of temperature and day of the week.
       i) Check the structure of the`RailTrail`. 
       ii) How many variables and observations are in the data set? 
       iii) Which variables are `integer` type?
@@ -35,26 +65,18 @@ trial.vec
 ```
 
 
-2. 
 
-```{r}
-# Insert your code for this question after this line
-
-
-```
   
-3. 
+4.  You will work with the passenger Titanic data found on this [link](<https://goo.gl/NHb1Pg>). 
+      i) Read this data directly from the web using its URL.
+      ii) Read this data by saving it first into your working directory. Check your working directory using `getwd()` or change its location using the steps covered in the lesson.
+      iii) How many passengers and what variables are in the data set? 
+      iv) Display the first 5 rows of the data.
 
+## Code chunk
 ```{r}
 # Insert your code for this question after this line
 
 
 ```
 
-4. 
-
-```{r}
-# Insert your code for this question after this line
-
-
-```
