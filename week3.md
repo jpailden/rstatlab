@@ -136,7 +136,9 @@ Dotplots for `weight` across different `feed` panels.
 dotPlot(~ weight | feed, data = chickwts, cex = 0.8) # reduce the size of the dots by 20%
 ```
 
-<img src="figures/14-wk02-1.png" style="display: block; margin: auto;" /> Boxplots for `weights` by different `feeds` in the same panel.
+<img src="figures/14-wk02-1.png" style="display: block; margin: auto;" />
+
+Boxplots for `weights` by different `feeds` in the same panel.
 
 ``` r
 bwplot(weight ~ feed, data = chickwts)
