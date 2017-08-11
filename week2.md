@@ -2,9 +2,63 @@ Week 2: Reading Data in R
 ================
 written by Junvie Pailden
 
-### Data Set Structure
+Matrices
+--------
 
-A data set usually includes variables (columns) and observations (rows). We can check the structure of the data using the function `str()`. The output includes data information such as
+We often store numerical data in a rectangular format called matrices. These will have two dimensions, rows and columns. Recall last week that we can create a matrix in R by binding two numerical vectors using `cbind()` function. Another way is to use the `matrix()` function.
+
+``` r
+# store the vector (1, 2, 3, 4, 5, 6, 7, 8) into a 2x4 matrix named A
+A <- matrix(c(1,2,3,4,5,6,7,8), nrow = 2, ncol = 4) # nrow = # of rows, ncol = # of columns
+A
+#      [,1] [,2] [,3] [,4]
+# [1,]    1    3    5    7
+# [2,]    2    4    6    8
+```
+
+If we wanted to fill the matrix in order of the rows first, we use the optional `byrow = TRUE` argument.
+
+``` r
+B <- matrix(1:8, nrow = 2, ncol = 4, byrow = TRUE) # 1:8 is another way of generating  the vector
+B
+#      [,1] [,2] [,3] [,4]
+# [1,]    1    2    3    4
+# [2,]    5    6    7    8
+```
+
+We can assign column and row names using `colnames()` and `rownames()`, respectively.
+
+``` r
+colnames(A) <- c('C1', 'C2', 'C3', 'C4')
+rownames(A) <- c('R1', 'R2')
+A
+#    C1 C2 C3 C4
+# R1  1  3  5  7
+# R2  2  4  6  8
+```
+
+Accessing the element of a matrix can be done using `[row, col]` notation.
+
+``` r
+A[1, 3]   # row 1, col 3 entry
+# [1] 5
+A[1, 1:3] # row 1, col 1 to 3
+# C1 C2 C3 
+#  1  3  5
+A[1, ]    # row 1
+# C1 C2 C3 C4 
+#  1  3  5  7
+A[ , 3]   # col 3
+# R1 R2 
+#  5  6
+```
+
+Data Frames
+-----------
+
+Matrices can only store numerical values. We, however, often store values that are non-numeric. Data frames are generalized version of a matrix to include other types of data. Data frames are similar in concept to Excel spreadsheet where each column represents a variable or measurement and each row represents and observational unit. We can create a data frame using the function `data.frame()`.
+
+We can check the structure of the data frame using the function `str()`. The output includes data information such as
 
 -   dimension (number of observations and variables),
 -   variable names
@@ -13,12 +67,39 @@ A data set usually includes variables (columns) and observations (rows). We can 
     -   `int`: integer
     -   `num`: numerical
     -   `chr`: character
-    -   `Factor`: categorical with defined levels
+    -   `Factor`: Factors are how R keeps track of categorical variables.
 
-Working with data provided by R packages
-----------------------------------------
+``` r
+stark.kids <- data.frame(
+  Name = c("Jon", "Sansa", "Arya", "Bran"),
+  Age = c(24, 20, 18, 17)
+)
+str(stark.kids)
+# 'data.frame': 4 obs. of  2 variables:
+#  $ Name: Factor w/ 4 levels "Arya","Bran",..: 3 4 1 2
+#  $ Age : num  24 20 18 17
+stark.kids
+#    Name Age
+# 1   Jon  24
+# 2 Sansa  20
+# 3  Arya  18
+# 4  Bran  17
+```
 
-Lets consider the data `chickwts` in the package `datasets` included with every R installation. The data was the result of an experiment conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens.
+We can also use the names of variables in a data frame to access the variable using the notation `data$name`.
+
+``` r
+stark.kids$Name
+# [1] Jon   Sansa Arya  Bran 
+# Levels: Arya Bran Jon Sansa
+mean(stark.kids$Age) # average age
+# [1] 19.75
+```
+
+Working with data frames included in R packages
+-----------------------------------------------
+
+Consider the data `chickwts` in the package `datasets` included with every R installation. The data was the result of an experiment conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens.
 
 ``` r
 str(chickwts) # check data structure
@@ -36,21 +117,10 @@ head(chickwts, 4) # display first 4 rows
 # 2    160 horsebean
 # 3    136 horsebean
 # 4    227 horsebean
-chickwts[1, 1] # display 1st row and 1st column entry
-# [1] 179
-chickwts[, 2] # display column 2, or use chickwts$feed
-#  [1] horsebean horsebean horsebean horsebean horsebean horsebean horsebean
-#  [8] horsebean horsebean horsebean linseed   linseed   linseed   linseed  
-# [15] linseed   linseed   linseed   linseed   linseed   linseed   linseed  
-# [22] linseed   soybean   soybean   soybean   soybean   soybean   soybean  
-# [29] soybean   soybean   soybean   soybean   soybean   soybean   soybean  
-# [36] soybean   sunflower sunflower sunflower sunflower sunflower sunflower
-# [43] sunflower sunflower sunflower sunflower sunflower sunflower meatmeal 
-# [50] meatmeal  meatmeal  meatmeal  meatmeal  meatmeal  meatmeal  meatmeal 
-# [57] meatmeal  meatmeal  meatmeal  casein    casein    casein    casein   
-# [64] casein    casein    casein    casein    casein    casein    casein   
-# [71] casein   
-# Levels: casein horsebean linseed meatmeal soybean sunflower
+tail(chickwts, 2) # display last 2 rows
+#    weight   feed
+# 70    283 casein
+# 71    332 casein
 ```
 
 Reading CSV data in R
@@ -68,10 +138,10 @@ The arguments of the `read.csv` function includes (among others)
 
 ### A) Loading a data set from a webpage using its URL (Universal Resource Locator).
 
-The article *Going Wireless (AARP Bulletin, June 2009)* reported the estimated percentage of house- holds with only wireless phone service (no land line) for the 50 U.S. states and the District of Columbia. In the accompanying data table, each state was also classified into one of three geographical regions—West (W), Middle states (M), and East (E).
+The article *Going Wireless (AARP Bulletin, June 2009)* reported the estimated percentage of house- holds with only wireless phone service (no land line) for the 50 U.S. states and the District of Columbia. In the accompanying data table, each state was also classified into one of three geographical regions—West (W), Middle states (M), and East (E). The data set url is <https://goo.gl/72BKSf>.
 
 ``` r
-wireless.data <- read.csv("http://siue.edu/~jpailde/data/s244/Ex0125.csv", header = TRUE)
+wireless.data <- read.csv("https://goo.gl/72BKSf", header = TRUE)
 ```
 
 ``` r
@@ -107,12 +177,12 @@ There are a number of ways to change the current working directory:
 
 ### Data on flight delays on the tarmac
 
-Download `Ex0127.csv` from this link (<http://siue.edu/~jpailde/data/s244/Ex0125.csv>). Save this file into your local directory.
+Download `flight.delay.csv` from this [link](https://goo.gl/QjCxDz). Save this file into your local directory.
 
 ``` r
 getwd() # no arguments needed
 # [1] "C:/Users/jpailde/Dropbox/rstatlab/rstatlab"
-delay <- read.csv("Ex0127.csv", header = TRUE)
+delay <- read.csv("flight.delay.csv", header = TRUE)
 str(delay)
 # 'data.frame': 17 obs. of  3 variables:
 #  $ Airline             : Factor w/ 17 levels "AirTran","American",..: 8 6 7 5 3 17 10 2 12 11 ...
