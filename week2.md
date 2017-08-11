@@ -5,7 +5,7 @@ written by Junvie Pailden
 Matrices
 --------
 
-We often store numerical data in a rectangular format called matrices. These will have two dimensions, rows and columns. Recall last week that we can create a matrix in R by binding two numerical vectors using `cbind()` function. Another way is to use the `matrix()` function.
+We often store numerical data in a rectangular format called matrices with two dimensions, rows and columns. Recall last week that we can create a matrix in R by binding two numerical vectors using the `cbind()` function. Another way is to use the `matrix()` function.
 
 ``` r
 # store the vector (1, 2, 3, 4, 5, 6, 7, 8) into a 2x4 matrix named A
@@ -132,13 +132,15 @@ Data analysis using R often involves importing or reading data at some point. Wh
 
 The arguments of the `read.csv` function includes (among others)
 
--   `file`: name of the data set
+-   `file`: name or URL (Universal Resource Locator) of the data set
 
 -   `header = TRUE`: if the file contains the names of the variables as its first line.
 
-### A) Loading a data set from a webpage using its URL (Universal Resource Locator).
+### A) Loading a data set from a webpage using its URL.
 
-The article *Going Wireless (AARP Bulletin, June 2009)* reported the estimated percentage of house- holds with only wireless phone service (no land line) for the 50 U.S. states and the District of Columbia. In the accompanying data table, each state was also classified into one of three geographical regions—West (W), Middle states (M), and East (E). The data set url is <https://goo.gl/72BKSf>.
+The article *Going Wireless (AARP Bulletin, June 2009)* reported the estimated percentage of house- holds with only wireless phone service (no land line) for the 50 U.S. states and the District of Columbia. In the accompanying data table, each state was also classified into one of three geographical regions—West (W), Middle states (M), and East (E).
+
+The URL of the data set `Going Wireless` that we need to read the data is (<https://goo.gl/72BKSf>).
 
 ``` r
 wireless.data <- read.csv("https://goo.gl/72BKSf", header = TRUE)
