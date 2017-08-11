@@ -189,7 +189,7 @@ Recall the fligh delays data from last week's session.
 
 ``` r
 getwd() # no arguments needed
-# [1] "/Users/JPMac/Dropbox/rstatlab/rstatlab"
+# [1] "C:/Users/jpailde/Dropbox/rstatlab/rstatlab"
 delay <- read.csv("Ex0127.csv", header = TRUE)
 favstats(~ Rate.per.10K.Flights, data = delay)
 #  min  Q1 median  Q3 max mean  sd  n missing
@@ -208,39 +208,3 @@ xyplot(Rate.per.10K.Flights ~ Delays, data = delay)
 <img src="figures/22-wk02-1.png" style="display: block; margin: auto;" />
 
 ------------------------------------------------------------------------
-
-Laboratory Exercise for Week 3 (10 points)
-==========================================
-
-*Directions*:
-
--   Download this week's exercise file and open the file using RStudio. Right click the link and "Save as..." to your desktop. (&lt;&gt;)
--   This file type is called RMarkdown and is used widely to share and collaborate R outputs. More information is found on this link (<http://rmarkdown.rstudio.com/articles_docx.html>).
--   All R codes should be written inside code chunks. Check (<http://rmarkdown.rstudio.com/authoring_rcodechunks.html>).
--   Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
-
-1.  The `RailTrail` dataset within the `mosaic` package includes the counts of crossings of a rail trail in Northampton, Massachusetts for 90 days in 2005. City officials are interested in understanding usage of the trail network, and how it changes as a function of temperature and day of the week.
-
-<!-- -->
-
-1.  Check the structure of the`RailTrail`.
-
-2.  How many variables and observations are in the data set?
-
-3.  Which variables are `integer` type?
-
-4.  Display the first 4 rows of the `RailTrail`.
-
-\#\# Code chunk
-
-``` r
-# Insert your code for this question after this line
-```
-
-1.  Calculate the mean and standard deviation of the variable `avgtemp`.
-
-\#\# Code chunk
-
-``` r
-# Insert your code for this question after this line
-```

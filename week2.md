@@ -15,8 +15,8 @@ A data set usually includes variables (columns) and observations (rows). We can 
     -   `chr`: character
     -   `Factor`: categorical with defined levels
 
-1) Working with data provided by R packages
--------------------------------------------
+Working with data provided by R packages
+----------------------------------------
 
 Lets consider the data `chickwts` in the package `datasets` included with every R installation. The data was the result of an experiment conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens.
 
@@ -53,8 +53,8 @@ chickwts[, 2] # display column 2, or use chickwts$feed
 # Levels: casein horsebean linseed meatmeal soybean sunflower
 ```
 
-2) Reading CSV data in R
-------------------------
+Reading CSV data in R
+---------------------
 
 Data analysis using R often involves importing or reading data at some point. While R can read other data types, comma separated files (.csv) are much easier to work with. Saving data files in .csv format is standard in practice. We use the command `read.csv` to read .csv data in R.
 
@@ -111,7 +111,7 @@ Download `Ex0127.csv` from this link (<http://siue.edu/~jpailde/data/s244/Ex0125
 
 ``` r
 getwd() # no arguments needed
-# [1] "/Users/JPMac/Dropbox/rstatlab/rstatlab"
+# [1] "C:/Users/jpailde/Dropbox/rstatlab/rstatlab"
 delay <- read.csv("Ex0127.csv", header = TRUE)
 str(delay)
 # 'data.frame': 17 obs. of  3 variables:
@@ -129,25 +129,3 @@ head(delay)
 ```
 
 ------------------------------------------------------------------------
-
-Laboratory Exercise for Week 2 (10 points)
-==========================================
-
-*Directions*:
-
--   Download this week's exercise file and open the file using RStudio. Right click the link and "Save as..." to your desktop. (&lt;&gt;)
--   This file type is called RMarkdown and is used widely to share and collaborate R outputs. More information is found on this link (<http://rmarkdown.rstudio.com/articles_docx.html>).
--   All R codes should be written inside code chunks. Check (<http://rmarkdown.rstudio.com/authoring_rcodechunks.html>).
--   Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
-
-1.  The `RailTrail` dataset within the `mosaic` package includes the counts of crossings of a rail trail in Northampton, Massachusetts for 90 days in 2005. City officials are interested in understanding usage of the trail network, and how it changes as a function of temperature and day of the week.
-    1.  Check the structure of the`RailTrail`.
-    2.  How many variables and observations are in the data set?
-    3.  Which variables are `integer` type?
-    4.  Display the first 4 rows of the `RailTrail`.
-
-\#\# Code chunk
-
-``` r
-# Insert your code for this question after this line
-```

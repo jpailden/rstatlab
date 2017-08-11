@@ -201,6 +201,8 @@ For example, when looking for information on computing the average or mean of a 
 
 ``` r
 help("mean") # or
+# starting httpd help server ...
+#  done
 ?mean        # scroll to the bottom to see examples
 x <- c(0:10, 50)
 x
@@ -210,31 +212,3 @@ mean(x)
 ```
 
 ------------------------------------------------------------------------
-
-Laboratory Exercise for Week 1 (10 points)
-==========================================
-
-*Directions*:
-
--   Download this week's exercise file and open the file using RStudio. Right click the link and "Save as..." to your desktop. (<https://goo.gl/noVy6g>)
--   This file type is called RMarkdown and is used widely to share and collaborate R outputs. More information is found on this link (<http://rmarkdown.rstudio.com/articles_docx.html>).
--   All R codes should be written inside the code chunks. Check (<http://rmarkdown.rstudio.com/authoring_rcodechunks.html>).
--   Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
-
-1.  Create a vector of three elements `(2,4,6)` and name that vector `vec.a`. Create a second vector, `vec.b`, that contains `(8,10,12)`.
-    1.  Add these two vectors together and name the result `vec.c`.
-    2.  Create a vector, named `vec.d`, that contains only two elements `(14,20)`. Add this vector to `vec.a`. What is the result and what do you think `R` did (look up the recycling rule using `Google`)? What is the warning message that `R` gives you?
-    3.  Next add 5 to the vector `vec.a`. What is the result and what did `R` do? Why doesn’t it give you a warning message similar to what you saw in the previous problem?
-
-2.  Generate the vector of even numbers `{2, 4, 6, . . . , 20}`
-    1.  Using the `seq()` function and
-    2.  Using the `a:b` shortcut and some subsequent algebra. *Hint: Generate the vector 1-10 and then multiple it by 2.*
-
-3.  Create a vector `y` containing `(2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8)` using the `rep()` function. You might need to check the help file for `rep()` by typing `?rep` in the console to see all of the options that `rep()` will accept. In particular, look at the optional argument `each=`.
-    1.  Find the mean of vector `y` using the function `mean()`.
-    2.  Use google search to find the function in `R` that computes the variance of a vector and find the variance of `y`.
-
-4.  The vector `letters` is a built-in vector to `R` and contains the lower case English alphabet.
-    1.  Extract the 9th element of the `letters` vector.
-    2.  Extract the sub-vector that contains the 9th, 11th, and 19th elements.
-    3.  Extract the sub-vector that contains everything except the last two elements.

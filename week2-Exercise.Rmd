@@ -1,0 +1,60 @@
+---
+title: 'Laboratory Exercise Week 2'
+author: "Your Name and Section"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+1. 1. The `RailTrail` dataset within the `mosaic` package includes the counts of crossings of a rail trail in Northampton, Massachusetts for 90 days in 2005. City officials are interested in understanding usage of the trail network, and how it changes as a function of temperature and day of the week.
+      i) Check the structure of the`RailTrail`. 
+      ii) How many variables and observations are in the data set? 
+      iii) Which variables are `integer` type?
+      iv) Display the first 4 rows of the data.
+
+## Code chunk
+```{r} 
+# Insert your code for this question after this line
+trial.vec <- 1:20
+trial.vec
+
+# last R code line
+```
+
+
+2. 
+
+```{r}
+# Insert your code for this question after this line
+
+
+```
+  
+3. 
+
+```{r}
+# Insert your code for this question after this line
+
+
+```
+
+4. 
+
+```{r}
+# Insert your code for this question after this line
+
+
+```
