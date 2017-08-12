@@ -152,7 +152,7 @@ Going Wireless Data
 Consider the Going Wireless Data from the previous week.
 
 ``` r
-wireless.data <- read.csv("http://siue.edu/~jpailde/data/s244/Ex0125.csv", header = TRUE)
+wireless.data <- read.csv("https://goo.gl/72BKSf", header = TRUE)
 ```
 
 Descriptive summaries for the Going Wireless data
@@ -190,7 +190,7 @@ Recall the fligh delays data from last week's session.
 ``` r
 getwd() # no arguments needed
 # [1] "C:/Users/jpailde/Dropbox/rstatlab/rstatlab"
-delay <- read.csv("Ex0127.csv", header = TRUE)
+delay <- read.csv("flight.delay.csv", header = TRUE)
 favstats(~ Rate.per.10K.Flights, data = delay)
 #  min  Q1 median  Q3 max mean  sd  n missing
 #  0.1 0.8    1.2 1.6 4.9 1.61 1.3 17       0
