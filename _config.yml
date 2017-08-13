@@ -7,3 +7,5 @@ paginate:     1
 author:
   name:       Junvie Pailden
   url:        http://www.siue.edu/~jpailde/ 
+
+theme: jekyll-theme-cayman
