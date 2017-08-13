@@ -2,7 +2,6 @@ theme: jekyll-theme-cayman
 
 # Setup
 title:        SIUE Stat Classes Laboratory Page
-tagline:     This repository contains weekly statistical lab mateerials. using R.
 baseurl:      ""
 paginate:     1
 
