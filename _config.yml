@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 
 # Setup
 title:        SIUE Stat Classes Laboratory Page
-tagline:      A responsive theme for your project on GitHub Pages
+tagline:     This repository contains weekly statistical lab mateerials. using R.
 baseurl:      ""
 paginate:     1
 
