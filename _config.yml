@@ -1,1 +1,12 @@
 theme: jekyll-theme-cayman
+
+# Setup
+title:        SIUE Stat Classes Laboratory Page
+tagline:      A responsive theme for your project on GitHub Pages
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name:       Junvie Pailden
+  url:        http://www.siue.edu/~jpailde/ 
