@@ -45,7 +45,7 @@ mean(weight ~ feed, data = chickwts)
 #       324       160       219       277       246       329
 ```
 
-You can also compute other numerical summaries such as the `median()`, variance `var()`, standard deviation `sd()`, etc.
+We can also compute other numerical summaries such as the `median()`, variance `var()`, standard deviation `sd()`, etc.
 
 Another handy function in the `mosaic` package is `favstats` which outputs the
 
@@ -171,7 +171,7 @@ favstats(Wireless ~ Region, data = wireless.data)
 Graphical summaries for the Going Wireless data
 
 ``` r
-histogram(~ Wireless | Region, data = wireless.data, width = 3) # histogram bin width = 3
+dotPlot(~ Wireless | Region, data = wireless.data) # dotplot
 ```
 
 <img src="figures/20-wk02-1.png" style="display: block; margin: auto;" />
@@ -189,7 +189,7 @@ Recall the fligh delays data from last week's session.
 
 ``` r
 getwd() # no arguments needed
-# [1] "C:/Users/jpailde/Dropbox/rstatlab/rstatlab"
+# [1] "/Users/JPMac/Dropbox/rstatlab/rstatlab"
 delay <- read.csv("flight.delay.csv", header = TRUE)
 favstats(~ Rate.per.10K.Flights, data = delay)
 #  min  Q1 median  Q3 max mean  sd  n missing
