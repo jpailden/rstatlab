@@ -173,9 +173,9 @@ There are a number of ways to change the current working directory:
 
 -   Use the [setwd](https://stat.ethz.ch/R-manual/R-devel/library/base/html/getwd.html) R function
 
--   Use the `Tools | Change Working Dir...` menu (`Session | Set Working Directory` on a mac). This will also change directory location of the Files pane.
+-   Click `Session > Set Working Dir > Choose Directory` menu . This will also change directory location of the Files pane.
 
--   From within the Files pane, use the More | Set As Working Directory menu. (Navigation within the Files pane alone will not change the working directory.)
+-   From within the `Files` pane (lower left), click `More > Set As Working Directory` menu. (Navigation within the Files pane alone will not change the working directory.)
 
 ### Data on flight delays on the tarmac
 
@@ -183,7 +183,7 @@ Download `flight.delay.csv` from this [link](https://goo.gl/QjCxDz). Save this f
 
 ``` r
 getwd() # no arguments needed
-# [1] "C:/Users/jpailde/Dropbox/rstatlab/rstatlab"
+# [1] "C:/Users/Pailden/Google Drive/SIUE_Class/rstatlab/rstatlab"
 delay <- read.csv("flight.delay.csv", header = TRUE)
 str(delay)
 # 'data.frame': 17 obs. of  3 variables:
