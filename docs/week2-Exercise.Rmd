@@ -46,14 +46,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # Insert your code for this question after this line
 
-
+# last R code line
 ```
 
-3. The popular `iris` data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica. The `iris` data set is included with every R installation.    
-      i) Check the structure of the`iris` data.   
-      ii) How many variables and observations are in the data set?  
-      iii) Which variables are `numeric` type?  
-      iv) Display the first 4 rows of the data.  
+3. The popular `iris` data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica. The `iris` data set is included with every R installation.  
+      i) Check the structure of the`iris` data. 
+      ii) How many variables and observations are in the data set? 
+      iii) Which variables are `numeric` type?
+      iv) Display the first 4 rows of the data.
+
+
 
 ### Code chunk
 ```{r} 
