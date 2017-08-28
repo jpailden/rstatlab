@@ -175,7 +175,7 @@ There are a number of ways to change the current working directory:
 
 -   Click `Session > Set Working Dir > Choose Directory` menu . This will also change directory location of the Files pane.
 
--   From within the `Files` pane (lower left), click `More > Set As Working Directory` menu. (Navigation within the Files pane alone will not change the working directory.)
+-   From within the `Files` panel (lower right), click `More > Set As Working Directory` menu. (Navigation within the Files pane alone will not change the working directory.)
 
 ### Data on flight delays on the tarmac
 
