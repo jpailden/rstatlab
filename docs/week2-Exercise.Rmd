@@ -19,11 +19,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-1. You will work with a matrix whose entries are all prime numbers below 30.
-      i)  Create this matrix using the function `matrix()` with five rows. Save the matrix as `P`.
-      ii) Extract the second and third row out of `P`.
-      iii) Extract the entry in the fourth row and first column of `P`.
-      iv) Generate the transpose of the matrix using the function `t()`. What is the new dimension of this matrix.
+1. You will work with a matrix whose entries are all prime numbers below 30.  
+      i)  Create this matrix using the function `matrix()` with five rows. Save the matrix as `P`.  
+      ii) Extract the second and third row out of `P`.  
+      iii) Extract the entry in the fourth row and first column of `P`.  
+      iv) Generate the transpose of the matrix using the function `t()`. What is the new dimension of this matrix.  
 
 ### Code chunk
 ```{r}
@@ -33,13 +33,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 2. Create and manipulate a data frame.
-      i) Create a `data.frame` named `my.trees` that has the following columns:
-          - `Girth = c(8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0)`
-          - `Height = c(70, 65, 63, 72, 81, 83, 66)`
-          - `Volume = c(10.3, 10.3, 10.2, 16.4, 18.8, 19.7, 15.6)`
-      ii) Extract the fifth observational unit.
-      iii) Extract the `Girth` column referring to it by name.
-      iv) Print out a data frame of all the observations except for the last observation.
+      i) Create a `data.frame` named `my.trees` that has the following columns:  
+          - `Girth = c(8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0)`  
+          - `Height = c(70, 65, 63, 72, 81, 83, 66)`  
+          - `Volume = c(10.3, 10.3, 10.2, 16.4, 18.8, 19.7, 15.6)`  
+      ii) Extract the fifth observational unit.  
+      iii) Extract the `Girth` column referring to it by name.  
+      iv) Print out a data frame of all the observations except for the last observation.  
 
 
 ### Code chunk
@@ -68,11 +68,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
   
-4.  You will work with the passenger Titanic data found on this [link](<https://goo.gl/NHb1Pg>). 
-      i) Read this data directly from the web using its URL.
-      ii) Read this data by saving it first into your working directory. Check your working directory using `getwd()` or change its location using the steps covered in the lesson.
-      iii) How many passengers and what variables are in the data set? 
-      iv) Display the first 5 rows of the data.
+4.  You will work with the passenger Titanic data found on this [link](<https://goo.gl/NHb1Pg>).   
+      i) Read this data directly from the web using its URL.  
+      ii) Read this data by saving it first into your working directory. Check your working directory using `getwd()` or change its location using the steps covered in the lesson.  
+      iii) How many passengers and what variables are in the data set?   
+      iv) Display the first 5 rows of the data.  
 
 ### Code chunk
 ```{r}
