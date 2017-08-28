@@ -58,8 +58,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Code chunk
 ```{r} 
 # Insert your code for this question after this line
-trial.vec <- 1:20
-trial.vec
+install.packages("mosaic")  # need to this once
+# download mosaic package, be sure you have internet access
+library(mosaic)  # load mosaic package including the data `RailTrail
+str(RailTrail) 
+
 
 # last R code line
 ```
