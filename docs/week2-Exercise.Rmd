@@ -49,19 +49,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-3. The `RailTrail` dataset within the `mosaic` package includes the counts of crossings of a rail trail in Northampton, Massachusetts for 90 days in 2005. City officials are interested in understanding usage of the trail network, and how it changes as a function of temperature and day of the week.
-      i) Check the structure of the`RailTrail`. 
+3. The popular `iris` data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica. The `iris` data set is included with every R installation.
+      i) Check the structure of the`iris` data. 
       ii) How many variables and observations are in the data set? 
-      iii) Which variables are `integer` type?
+      iii) Which variables are `numeric` type?
       iv) Display the first 4 rows of the data.
 
 ## Code chunk
 ```{r} 
 # Insert your code for this question after this line
-install.packages("mosaic")  # need to this once
-# download mosaic package, be sure you have internet access
-library(mosaic)  # load mosaic package including the data `RailTrail
-str(RailTrail) 
 
 
 # last R code line
