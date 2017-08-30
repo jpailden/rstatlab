@@ -177,6 +177,8 @@ There are a number of ways to change the current working directory:
 
 -   From within the `Files` panel (lower right), click `More > Set As Working Directory` menu. (Navigation within the Files pane alone will not change the working directory.)
 
+> As good practice, save your `.Rmd` exercise file and your `.csv` data file in the same folder.
+
 ### Data on flight delays on the tarmac
 
 Download `flight.delay.csv` from this [link](https://goo.gl/QjCxDz). Save this file into your local directory.
