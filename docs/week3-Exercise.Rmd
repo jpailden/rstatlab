@@ -74,6 +74,9 @@ library(mosaic) # load the package
 mlb16.data <- read.csv("https://raw.githubusercontent.com/jpailden/rstatlab/master/data/MLB-TeamBatting-S16.csv")
 str(mlb16.data) # check structure
 head(mlb16.data)  # show first six rows
+
+
+
 # last R code line
 ```
 
