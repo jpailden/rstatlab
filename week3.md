@@ -47,7 +47,20 @@ mean(weight ~ feed, data = chickwts)
 
 We can also compute other numerical summaries such as the `median()`, variance `var()`, standard deviation `sd()`, etc.
 
-Another handy function in the `mosaic` package is `favstats` which outputs the
+``` r
+median(~ weight, data = chickwts) # median for all weights
+# [1] 258
+median(weight ~ feed, data = chickwts) # median weight for every type of feed
+#    casein horsebean   linseed  meatmeal   soybean sunflower 
+#       342       152       221       263       248       328
+sd(~ weight, data = chickwts)  # std. deviation for all weights
+# [1] 78.1
+sd(weight ~ feed, data = chickwts) # std. deviation weight for every type of feed
+#    casein horsebean   linseed  meatmeal   soybean sunflower 
+#      64.4      38.6      52.2      64.9      54.1      48.8
+```
+
+Another handy function in the `mosaic` package is `favstats()` which outputs the
 
 -   five-number summary
 -   mean
@@ -56,10 +69,10 @@ Another handy function in the `mosaic` package is `favstats` which outputs the
 -   number missing values
 
 ``` r
-favstats(~ weight, data = chickwts)
+favstats(~ weight, data = chickwts) # for all weights
 #  min  Q1 median  Q3 max mean   sd  n missing
 #  108 204    258 324 423  261 78.1 71       0
-favstats(weight ~ feed, data = chickwts)
+favstats(weight ~ feed, data = chickwts) # for every type of feed
 #        feed min  Q1 median  Q3 max mean   sd  n missing
 # 1    casein 216 277    342 371 404  324 64.4 12       0
 # 2 horsebean 108 137    152 176 227  160 38.6 10       0
@@ -185,11 +198,11 @@ bwplot(Wireless ~ Region, data = wireless.data) # boxplots
 Data on flight delays on the tarmac
 -----------------------------------
 
-Recall the fligh delays data from last week's session.
+Recall the flight delays data from last week's session. Load this data set using the function `read.csv()` we learned last week. Be sure to check that your working directory contains the data set (`flight.delay.csv`); otherwise, you need to change the working directory - see [last week's lesson](https://github.com/jpailden/rstatlab/blob/master/week2.md) on how to do this.
 
 ``` r
 getwd() # no arguments needed
-# [1] "/Users/JPMac/Dropbox/rstatlab/rstatlab"
+# [1] "C:/Users/Pailden/Google Drive/SIUE_Class/rstatlab/rstatlab"
 delay <- read.csv("flight.delay.csv", header = TRUE)
 favstats(~ Rate.per.10K.Flights, data = delay)
 #  min  Q1 median  Q3 max mean  sd  n missing
@@ -199,12 +212,12 @@ histogram(~ Rate.per.10K.Flights, data = delay)
 
 <img src="figures/21-wk02-1.png" style="display: block; margin: auto;" />
 
-Scatterplot with `Delays` on the horizontal axis and `Rate.per.10K.Flights` on the vertical axis.
+Scatterplot with `Delays` on the horizontal axis and `Rate.per.10K.Flights` on the vertical axis. Scatterplot's are mainly used to visualize the relationship between two numerical variables.
 
 ``` r
 xyplot(Rate.per.10K.Flights ~ Delays, data = delay)
 ```
 
-<img src="figures/22-wk02-1.png" style="display: block; margin: auto;" />
+<img src="figures/22-wk02-1.png" style="display: block; margin: auto;" /> It seems that there is a straight line relationship between the variables `Delays` and `Rate.per.10K.Flights`.
 
 ------------------------------------------------------------------------
