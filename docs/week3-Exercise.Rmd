@@ -62,7 +62,7 @@ library(mosaic) # load the package
 
     i) Find the average measurement for the following variables `BatAge`, `RPG`, `R`, `H` and `BA`.   
     ii) Create dotplot's for each variable in (i).     
-    iii) Using your own words, describe the distribution of each variable in (i).   Write your answer outside the code chunck.     
+    iii) Using your own words, describe the distribution of each variable in (i).   Write your answer outside the code chunk.     
     iv) Find the average and the standard deviation of the variables `RPG`, `H` and `BA` for each league.     
     v) Describe any differences or similarities between the leagues. Write your comment outside the code chunk.
       
