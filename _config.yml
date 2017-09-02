@@ -1,7 +1,8 @@
 theme: jekyll-theme-cayman
 
 # Setup
-title:        SIUE Stat Classes Laboratory Page
+title:        SIUE Statistical Laboratory Page
+tagline:      
 baseurl:      ""
 paginate:     1
 
@@ -9,3 +10,4 @@ paginate:     1
 author:
   name:       Junvie Pailden
   url:        http://www.siue.edu/~jpailde/ 
+
