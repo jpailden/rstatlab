@@ -29,9 +29,9 @@ library(mosaic) # load the package
 
 1. Recall the `iris` data set from last week's exercise. The `iris` data set is already pre-loaded in R - look at the help file using `?iris` for more information on this data set.   
       i) Check the structure of the data using the function `str(iris)`.   
-      ii) Find the average (or mean) measurement of the variable `Sepal.Length`. Do this in two ways as described in the lesson. 
+      ii) Find the average (or mean) measurement of the variable `Sepal.Length`. Do this in two ways as described in the lesson.   
       iii) Find the average `Sepal.Length` for the different flower `Species`. Give a brief comment on the averages.  
-      iv) Repeat (ii) and (iii) but use the summary standard deviation `sd()` which describes the spread of the variable.  
+      iv) Repeat (ii) and (iii) but use the summary standard deviation `sd()` which describes the spread of the variable.   
       v) Describe the shape of the variable `Sepal.Length` by creating a histogram using `histogram()`.  Write your description outside the code chunk.  
       vi) Compare the `Sepal.Length` of the three species of flowers by creating a side-by-side boxplot using `bwplot()`. Write your description outside the code chunk.
       
@@ -60,10 +60,11 @@ library(mosaic) # load the package
     * SH - Sacrifice Hits (Sacrifice Bunts)  
     * SF - Sacrifice Flies  
 
-    i) Find the average measurement for the following variables `BatAge`, `RPG`, `R`, `H` and `BA`.  
-    ii) Create dotplot's for each variable in (i).   
-    iii) Using your own words, describe the distribution of each variable in (i). Write your answer outside the code chunck. 
-    iv) Find the average and the standard deviation of the variables `RPG`, `H` and `BA` for each league. Describe any differences or similarities between the leagues. Write your comment outside the code chunk.
+    i) Find the average measurement for the following variables `BatAge`, `RPG`, `R`, `H` and `BA`.   
+    ii) Create dotplot's for each variable in (i).     
+    iii) Using your own words, describe the distribution of each variable in (i).   Write your answer outside the code chunck.     
+    iv) Find the average and the standard deviation of the variables `RPG`, `H` and `BA` for each league.     
+    v) Describe any differences or similarities between the leagues. Write your comment outside the code chunk.
       
 
 
