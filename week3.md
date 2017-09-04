@@ -7,14 +7,14 @@ written by Junvie Pailden
 The `mosaic` package was written to simplify the use of R for introductory statistics courses. A short summary of the R needed to teach introductory statistics can be found in the mosaic package vignettes (<http://cran.r-project.org/web/packages/mosaic>).
 
 ``` r
-install.packages(`mosaic`)
-library(mosaic)
+install.packages("mosaic") # need to run this line only once
+library(mosaic)            # load the package everytime you want to use its functions
 ```
 
 Numerical Summaries
 -------------------
 
-Recall the data set `chickwts` in the package `datasets` included with every R installation. We can compute the mean of the `weight` variable in the data `chickwts`.
+Recall the data set `chickwts` in the package `datasets` included with every R installation. We can compute the mean of the `weight` variable in the data `chickwts`. The tilde `~` sign is used to select the variable. The argument `data = chickwts` says that the variable `weight` is in `chickwts`.
 
 ``` r
 mean(~ weight, data = chickwts)
@@ -37,7 +37,7 @@ tally(~ feed, data = chickwts)
 #        12        10        12        11        14        12
 ```
 
-The formula interface allows us to compute the mean weight for every feed supplements.
+The formula interface allows us to compute the mean weight for every feed supplements. The argument `weight ~ feed` says that you want the weights for each type of feed.
 
 ``` r
 mean(weight ~ feed, data = chickwts)
@@ -201,9 +201,9 @@ Data on flight delays on the tarmac
 Recall the flight delays data from last week's session. Load this data set using the function `read.csv()` we learned last week. Be sure to check that your working directory contains the data set (`flight.delay.csv`); otherwise, you need to change the working directory - see [last week's lesson](https://github.com/jpailden/rstatlab/blob/master/week2.md) on how to do this.
 
 ``` r
-getwd() # no arguments needed
+getwd() # location of current working directory
 # [1] "C:/Users/Pailden/Google Drive/SIUE_Class/rstatlab/rstatlab"
-delay <- read.csv("flight.delay.csv", header = TRUE)
+delay <- read.csv("flight.delay.csv", header = TRUE) # load the data
 favstats(~ Rate.per.10K.Flights, data = delay)
 #  min  Q1 median  Q3 max mean  sd  n missing
 #  0.1 0.8    1.2 1.6 4.9 1.61 1.3 17       0
@@ -218,6 +218,8 @@ Scatterplot with `Delays` on the horizontal axis and `Rate.per.10K.Flights` on t
 xyplot(Rate.per.10K.Flights ~ Delays, data = delay)
 ```
 
-<img src="figures/22-wk02-1.png" style="display: block; margin: auto;" /> It seems that there is a straight line relationship between the variables `Delays` and `Rate.per.10K.Flights`.
+<img src="figures/22-wk02-1.png" style="display: block; margin: auto;" />
+
+It seems that there is a straight line relationship between the variables `Delays` and `Rate.per.10K.Flights`.
 
 ------------------------------------------------------------------------

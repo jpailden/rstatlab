@@ -22,8 +22,9 @@ knitr::opts_chunk$set(echo = TRUE)
 For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
 
 ```{r}
-install.packages("mosaic") # download the package - need internet connection
-library(mosaic) # load the package
+# if mosaic package is not installed, then run install.packages("mosaic") 
+# in your console: note that you need to this only one time
+library(mosaic) # load the package to use its functions
 ```
 
 
