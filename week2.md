@@ -181,11 +181,11 @@ There are a number of ways to change the current working directory:
 
 ### Data on flight delays on the tarmac
 
-Download `flight.delay.csv` from this [link](https://goo.gl/QjCxDz). Save this file into your local directory.
+Download `flight.delay.csv` from this [link](https://goo.gl/QjCxDz). To load the data `flight.delay.csv` from a folder in your machine, you need to change the working directory to that folder; otherwise, R will not know where to look for `flight.delay.csv`. Follow the instruction above on how to change the working directory. The `getwd()` function check whether you are in the correct working directory/folder.
 
 ``` r
 getwd() # no arguments needed
-# [1] "C:/Users/Pailden/Google Drive/SIUE_Class/rstatlab/rstatlab"
+# [1] "C:/Users/jpailde/Google Drive/SIUE_Class/rstatlab/rstatlab"
 delay <- read.csv("flight.delay.csv", header = TRUE)
 str(delay)
 # 'data.frame': 17 obs. of  3 variables:
