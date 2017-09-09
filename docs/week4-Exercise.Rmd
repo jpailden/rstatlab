@@ -65,14 +65,14 @@ library(gapminder)
     * SH - Sacrifice Hits (Sacrifice Bunts)  
     * SF - Sacrifice Flies  
 
-Using the `mlb16.data` data, do the following:    
-    i) use `filter` to select teams with the following arguments:    
-         a) Cardinals team `STL`.    
-         b) teams with Hits `H` more than 1400 last 2016 season.   
-         c) team league `Lg` is National League `NL`. 
-    ii) use `arrange` to select teams in decreasing number of home runs `HR`.      
-    iii) use `group_by` to group the teams per league `lg`; and `arrange` to display the teams in decreasing number of `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.       
-    iv) use `group_by` to group the teams per league; and `summarise` to compute the average `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.   
+    Using the `mlb16.data` data, do the following:      
+      i) use `filter` to select teams with the following arguments:      
+            a) Cardinals team `STL`.    
+            b) teams with Hits `H` more than 1400 last 2016 season.   
+            c) team league `Lg` is National League `NL`. 
+      ii) use `arrange` to select teams in decreasing number of home runs `HR`.      
+      iii) use `group_by` to group the teams per league `lg`; and `arrange` to display the teams in decreasing number of `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.       
+      iv) use `group_by` to group the teams per league; and `summarise` to compute the average `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.   
       
 
 
