@@ -1,0 +1,92 @@
+---
+title: 'Laboratory Exercise Week 4'
+author: "Your Name and Section, 10 pts"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
+
+```{r}
+library(mosaic) # load the package mosaic to use its functions
+library(dplyr) # load the package dplyr to use its functions
+```
+
+
+1. Using the gapminder data in the lesson, do the following:  
+      i) use `filter` to select all countries with the following arguments:  
+          a) life expectancies larger than 60 years.   
+          b) United Kingdom and Vietnam and years greater than 1990.  
+      ii) use `arrange` and `slice` to select the countries with the top 15 GDP per capital `gdpPercap`. Use the pipe `%>%` operator to string multiple functions.
+      iii) use `mutate` to create a new variable called `gdpPercap_lifeExp` which is the quotient of `gdpPercap` and `lifeExp` and display the output.  
+      iv) use `summarise` to find the average or mean value of the variable `gdpPercap_lifeExp` created in part (iii).     
+      v) use `group_by` to group the countries by `continent`; and `summarise` to compute the average life expectancy `lifeExp` within each continent. Use the pipe `%>%` operator to string multiple functions.
+      
+      
+
+### Code chunk
+```{r} 
+# load the necessary packages
+library(mosaic)
+library(dplyr)
+library(gapminder)
+
+# last R code line
+```
+
+
+2. The data set `MLB-TeamBatting-S16.csv` contains MLB Team Batting Data for selected variables. Load the data set from the given url using the code below. This data set was obtained from [Baseball Reference](https://www.baseball-reference.com/leagues/MLB/2016-standard-batting.shtml).
+    * Tm - Team   
+    * Lg - League: American League (AL), National League (NL)  
+    * BatAge - Batters’ average age  
+    * RPG - Runs Scored Per Game  
+    * G - Games Played or Pitched  
+    * AB - At Bats  
+    * R - Runs Scored/Allowed  
+    * H - Hits/Hits Allowed  
+    * HR - Home Runs Hit/Allowed  
+    * RBI - Runs Batted In  
+    * SO - Strikeouts  
+    * BA - Hits/At Bats  
+    * SH - Sacrifice Hits (Sacrifice Bunts)  
+    * SF - Sacrifice Flies  
+
+Using the `mlb16.data` data, do the following:    
+    i) use `filter` to select teams with the following arguments:    
+         a) Cardinals team `STL`.    
+         b) teams with Hits `H` more than 1400 last 2016 season.   
+         c) team league `Lg` is National League `NL`. 
+    ii) use `arrange` to select teams in decreasing number of home runs `HR`.      
+    iii) use `group_by` to group the teams per league `lg`; and `arrange` to display the teams in decreasing number of `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.       
+    iv) use `group_by` to group the teams per league; and `summarise` to compute the average `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.   
+      
+
+
+### Code chunk
+```{r} 
+# load the data set
+mlb16.data <- read.csv("https://raw.githubusercontent.com/jpailden/rstatlab/master/data/MLB-TeamBatting-S16.csv")
+str(mlb16.data) # check structure
+head(mlb16.data)  # show first six rows
+
+
+
+# last R code line
+```
+
+
+
