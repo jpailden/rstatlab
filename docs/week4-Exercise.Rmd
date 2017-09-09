@@ -29,7 +29,7 @@ library(dplyr) # load the package dplyr to use its functions
 
 1. Using the gapminder data in the lesson, do the following:  
       i) use `filter` to select all countries with the following arguments:  
-          a) life expectancies larger than 60 years.   
+          a) life expectancy larger than 60 years.   
           b) United Kingdom and Vietnam and years greater than 1990.  
       ii) use `arrange` and `slice` to select the countries with the top 15 GDP per capital `gdpPercap`. Use the pipe `%>%` operator to string multiple functions.
       iii) use `mutate` to create a new variable called `gdpPercap_lifeExp` which is the quotient of `gdpPercap` and `lifeExp` and display the output.  
