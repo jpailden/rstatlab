@@ -23,7 +23,7 @@ For this exercise, you will need to use the package `mosaic` to find numerical a
 
 ```{r}
 # if mosaic package is not installed, then run install.packages("mosaic") 
-# in your console: note that you need to this only one time
+# in your console: note that you need to do this only one time
 library(mosaic) # load the package to use its functions
 ```
 

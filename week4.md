@@ -4,10 +4,12 @@ written by Junvie Pailden
 
 ### Load the packages mosaic, dplyr, and gapminder package.
 
+For this week, we need to use the package `mosaic` covered in [last week's lesson](https://github.com/jpailden/rstatlab/blob/master/week3.md). We also need to use another package called `dplyr`. The `dplyr` package contains functions that are often used in combination to manage and manipulate data sets in any manner. The data set we need in this lesson is found in the package `gapminder`.
+
 ``` r
-install.packages(`mosaic`)
-install.packages(`dplyr`)
-install.packages(`gapminder`)
+# install.packages(`mosaic`)
+# install.packages(`dplyr`)
+# install.packages(`gapminder`)
 library(mosaic)
 library(dplyr)
 library(gapminder)
@@ -186,37 +188,37 @@ select(gapminder, lifeExp, pop)
 # # ... with 1,694 more rows
 
 # Select all columns from year to population
-select(gapminder, year:gdpPercap)
-# # A tibble: 1,704 x 4
-#     year lifeExp      pop gdpPercap
-#    <int>   <dbl>    <int>     <dbl>
-#  1  1952  28.801  8425333  779.4453
-#  2  1957  30.332  9240934  820.8530
-#  3  1962  31.997 10267083  853.1007
-#  4  1967  34.020 11537966  836.1971
-#  5  1972  36.088 13079460  739.9811
-#  6  1977  38.438 14880372  786.1134
-#  7  1982  39.854 12881816  978.0114
-#  8  1987  40.822 13867957  852.3959
-#  9  1992  41.674 16317921  649.3414
-# 10  1997  41.763 22227415  635.3414
+select(gapminder, year:pop)
+# # A tibble: 1,704 x 3
+#     year lifeExp      pop
+#    <int>   <dbl>    <int>
+#  1  1952  28.801  8425333
+#  2  1957  30.332  9240934
+#  3  1962  31.997 10267083
+#  4  1967  34.020 11537966
+#  5  1972  36.088 13079460
+#  6  1977  38.438 14880372
+#  7  1982  39.854 12881816
+#  8  1987  40.822 13867957
+#  9  1992  41.674 16317921
+# 10  1997  41.763 22227415
 # # ... with 1,694 more rows
 
 # Select all columns except those from year to population
-select(gapminder, -(year:gdpPercap))
-# # A tibble: 1,704 x 2
-#        country continent
-#         <fctr>    <fctr>
-#  1 Afghanistan      Asia
-#  2 Afghanistan      Asia
-#  3 Afghanistan      Asia
-#  4 Afghanistan      Asia
-#  5 Afghanistan      Asia
-#  6 Afghanistan      Asia
-#  7 Afghanistan      Asia
-#  8 Afghanistan      Asia
-#  9 Afghanistan      Asia
-# 10 Afghanistan      Asia
+select(gapminder, -(year:pop))
+# # A tibble: 1,704 x 3
+#        country continent gdpPercap
+#         <fctr>    <fctr>     <dbl>
+#  1 Afghanistan      Asia  779.4453
+#  2 Afghanistan      Asia  820.8530
+#  3 Afghanistan      Asia  853.1007
+#  4 Afghanistan      Asia  836.1971
+#  5 Afghanistan      Asia  739.9811
+#  6 Afghanistan      Asia  786.1134
+#  7 Afghanistan      Asia  978.0114
+#  8 Afghanistan      Asia  852.3959
+#  9 Afghanistan      Asia  649.3414
+# 10 Afghanistan      Asia  635.3414
 # # ... with 1,694 more rows
 ```
 
@@ -260,7 +262,7 @@ rename(gapminder, life_expectancy = lifeExp)
 # # ... with 1,694 more rows
 ```
 
-### Use `distinct()` to find unique values in a column
+### Use `distinct()` to find the unique values of a variable
 
 ``` r
 distinct(gapminder, continent)
@@ -434,40 +436,40 @@ You can use `sample_n()` and `sample_frac()` to take a random sample of rows: us
 ``` r
 sample_n(gapminder, 10) # randomly sample 10 rows
 # # A tibble: 10 x 6
-#                  country continent  year lifeExp      pop  gdpPercap
-#                   <fctr>    <fctr> <int>   <dbl>    <int>      <dbl>
-#  1               Lebanon      Asia  1962  62.094  1886848  5714.5606
-#  2               Liberia    Africa  2007  45.678  3193942   414.5073
-#  3          South Africa    Africa  1977  55.527 27129932  8028.6514
-#  4                Serbia    Europe  1987  71.218  9230783 15870.8785
-#  5              Bulgaria    Europe  1972  70.900  8576200  6597.4944
-#  6               Jamaica  Americas  1952  58.530  1426095  2898.5309
-#  7              Tanzania    Africa  1952  41.215  8322925   716.6501
-#  8                Jordan      Asia  1957  45.669   746559  1886.0806
-#  9 Sao Tome and Principe    Africa  1982  60.351    98593  1890.2181
-# 10               Tunisia    Africa  1997  71.973  9231669  4876.7986
+#       country continent  year lifeExp       pop  gdpPercap
+#        <fctr>    <fctr> <int>   <dbl>     <int>      <dbl>
+#  1   Ethiopia    Africa  2002  50.725  67946797   530.0535
+#  2 Madagascar    Africa  1997  54.978  14165114   986.2959
+#  3   Paraguay  Americas  2007  71.752   6667147  4172.8385
+#  4  Argentina  Americas  1987  70.774  31620918  9139.6714
+#  5     Gambia    Africa  1967  35.857    439593   734.7829
+#  6      India      Asia  1952  37.373 372000000   546.5657
+#  7   Slovenia    Europe  1982  71.063   1861252 17866.7218
+#  8   Portugal    Europe  1967  66.600   9103000  6361.5180
+#  9    Bahrain      Asia  1997  73.925    598561 20292.0168
+# 10       Oman      Asia  1957  40.080    561977  2242.7466
 
 sample_frac(gapminder, 0.01) # randomly sample 1% of the data
 # # A tibble: 17 x 6
-#                     country continent  year lifeExp       pop  gdpPercap
-#                      <fctr>    <fctr> <int>   <dbl>     <int>      <dbl>
-#  1              Afghanistan      Asia  1987  40.822  13867957   852.3959
-#  2                   Malawi    Africa  2007  48.303  13327079   759.3499
-#  3                 Malaysia      Asia  1977  65.256  12845381  3827.9216
-#  4                   Brazil  Americas  1992  67.057 155975974  6950.2830
-#  5                  Vietnam      Asia  1987  62.820  62826491   820.7994
-#  6           Czech Republic    Europe  1972  70.290   9862158 13108.4536
-#  7                   Taiwan      Asia  1952  58.500   8550362  1206.9479
-#  8         Hong Kong, China      Asia  1997  80.000   6495918 28377.6322
-#  9                   Taiwan      Asia  2002  76.990  22454239 23235.4233
-# 10                   Gambia    Africa  1967  35.857    439593   734.7829
-# 11                  Germany    Europe  1982  73.800  78335266 22031.5327
-# 12 Central African Republic    Africa  1967  41.478   1733638  1136.0566
-# 13         Hong Kong, China      Asia  1982  75.450   5264500 14560.5305
-# 14    Sao Tome and Principe    Africa  1957  48.945     61325   860.7369
-# 15                   Turkey    Europe  1957  48.079  25670939  2218.7543
-# 16                 Paraguay  Americas  1967  64.951   2287985  2299.3763
-# 17                   Sweden    Europe  2007  80.884   9031088 33859.7484
+#                country continent  year lifeExp        pop  gdpPercap
+#                 <fctr>    <fctr> <int>   <dbl>      <int>      <dbl>
+#  1 Trinidad and Tobago  Americas  1972  65.900     975199  6619.5514
+#  2             Morocco    Africa  1982  59.650   20198730  2702.6204
+#  3               Spain    Europe  1957  66.660   29841614  4564.8024
+#  4          Mozambique    Africa  2007  42.082   19951656   823.6856
+#  5         Puerto Rico  Americas  1992  73.911    3585176 14641.5871
+#  6          Montenegro    Europe  1972  70.636     527678  7778.4140
+#  7               China      Asia  1992  68.690 1164970000  1655.7842
+#  8         Congo, Rep.    Africa  1977  55.625    1536769  3259.1790
+#  9               Kenya    Africa  2002  50.992   31386842  1287.5147
+# 10         Netherlands    Europe  1977  75.240   13852989 21209.0592
+# 11             Ecuador  Americas  1952  48.357    3548753  3522.1107
+# 12              Guinea    Africa  2007  56.007    9947814   942.6542
+# 13             Senegal    Africa  1987  55.769    7171347  1441.7207
+# 14           Argentina  Americas  1992  71.868   33958947  9308.4187
+# 15         Philippines      Asia  1992  66.458   67185766  2279.3240
+# 16            Bulgaria    Europe  2007  73.005    7322858 10680.7928
+# 17             Denmark    Europe  1982  74.630    5117810 21688.0405
 ```
 
 Use `replace = TRUE` to perform random selection with replacement. More on this next week.
