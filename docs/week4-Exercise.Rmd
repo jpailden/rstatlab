@@ -24,7 +24,7 @@ For this exercise, you will need to use the package `mosaic` to find numerical a
 ```{r}
 library(mosaic) # load the package mosaic to use its functions
 library(dplyr) # load the package dplyr to use its functions
-library(gapminder)  # load the package gapminder to use the gapminder data for question 1
+library(gapminder)  # load the package gapminder for question 1
 ```
 
 
