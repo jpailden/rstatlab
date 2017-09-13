@@ -72,7 +72,7 @@ library(gapminder)
                   b) teams with Hits `H` more than 1400 last 2016 season.   
                   c) team league `Lg` is National League `NL`.   
       ii) use `arrange` to select teams in decreasing number of home runs `HR`.      
-      iii) use `group_by` to group the teams per league `lg`; and `arrange` to display the teams in decreasing number of `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.       
+      iii) use `arrange` to display the teams in decreasing number of `RBI`.       
       iv) use `group_by` to group the teams per league; and `summarise` to compute the average `RBI` within each league. Use the pipe `%>%` operator to string multiple functions.   
       
 
