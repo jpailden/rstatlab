@@ -20,7 +20,7 @@ Starting Fall 2017, Stat 244 and Stat 380 will be using R software for all labor
 
 * Read the weekly lessons first and try out the R codes before answering the week's exercise.
 
-* Download the week's exercise file and open the file using RStudio. Right click the link and "Save as..." to your desktop. In some cases you might need to change the file extension to `.Rmd`.
+* Download the week's exercise file and open the file using RStudio. **Right click the link and "Save as..." to your desktop.** In some cases you might need to change the file extension to `.Rmd`.
 
 * This RMarkdown `(.Rmd)` file type is used widely to share R codes and reproduce statistical results. More information is found on this [page](<http://rmarkdown.rstudio.com/articles_docx.html>).
 
@@ -37,7 +37,7 @@ Starting Fall 2017, Stat 244 and Stat 380 will be using R software for all labor
         ```
         
         
-    - Write your comments after the `#` sign.
+    - Write your short comments after the hashtag `#` sign. For longer comments, write it outside the work chunk.
     
     - To generate the word document output, click the button `Knit` and wait for the word document to appear.
     
@@ -54,7 +54,7 @@ Weekly Lesson  |  Weekly Exercise
 ---------------|-----------
 [Week 1: R Software Introduction](<https://github.com/jpailden/rstatlab/blob/master/week1.md>) | [Exercise 1](<https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/Week1-Exercise.Rmd>)
 [Week 2: Reading Data in R](<https://github.com/jpailden/rstatlab/blob/master/week2.md>) | [Exercise 2](<https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week2-Exercise.Rmd>)
-[Week 3: Numerical and Graphical Summary](<https://github.com/jpailden/rstatlab/blob/master/week3.md>) | [Exercise 3](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week3-Exercise.Rmd)  
-[Week 4: Data Management in R](<https://github.com/jpailden/rstatlab/blob/master/week4.md>) | [Exercise 4](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week4-Exercise.Rmd)  
+[Week 3: Numerical and Graphical Summary using mosaic Package](<https://github.com/jpailden/rstatlab/blob/master/week3.md>) | [Exercise 3](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week3-Exercise.Rmd)  
+[Week 4: Data Management using dplyr Package](<https://github.com/jpailden/rstatlab/blob/master/week4.md>) | [Exercise 4](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week4-Exercise.Rmd)  
 [Week 5: Experiments, Random Samples, and Simulations in R](https://github.com/jpailden/rstatlab/blob/master/week5.md) | [Exercise 5](https://github.com/jpailden/rstatlab/blob/master/docs/week5-Exercise.Rmd)
 
