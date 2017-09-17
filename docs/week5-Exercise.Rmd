@@ -90,13 +90,15 @@ str(cdc)
     
     ii) Use `summarise` to compute the average of the variable `weight`.
     
-    iii) Use `group_by` to group the rows by `exerany` (exercise any). Repeat part (ii) on this grouped data. Comment on what you observe in the average weights between groups.
+    iii) Use `group_by` to group the rows by `exerany` (exercise any). Repeat part (ii) on this grouped data. Comment on what you observe in the average weights between groups. Use the pipe `%>%` operator to string multiple functions.   
+
+> Do not print the data frame (too long, 20K rows), just print the average weights.   
     
-    vi) Repeat part (iii) but now use the grouping variables `smoke100` and `gender`. Comment on what you observe in the average weights between groups.  
+    vi) Repeat part (iii) but now use the grouping variables `smoke100` and `gender`. Comment on what you observe in the average weights between groups. Use the pipe `%>%` operator to string multiple functions.  
     
-    v) Obtain a random sample of 1000 rows and save this into `csc.samp1`. 
+    v) Obtain a random sample of 100 rows and save this into `csc.samp1`. 
     
-    vi) Repeat parts (ii) to (v) but only using the subset data `csc.samp1`.  
+    vi) Repeat parts (ii) to (v) but only using the subset data `csc.samp1`.  Use the pipe `%>%` operator to string multiple functions.  
     
     vii) Comment on what differences you observed (if any) between the results in the original sample and the smaller sample?
     
