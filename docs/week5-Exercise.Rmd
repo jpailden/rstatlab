@@ -56,10 +56,14 @@ schizophrenia
 ```
 
 
-    i. use `mutate()` to create a new variable `diff` which is the difference of the MRI measurements of each pair.   
+    i. use `mutate()` to create a new variable `diff` which is the difference of the MRI measurements of each pair. 
+    
     ii. use the pipe `%>%` operator add the new variable `diff` as column to `schizophrenia`.  
-    iii. use `summarise` to compute the average difference of the MRI measurements. Use the pipe `%>%` operator to string multiple functions.
-    iv. use `summarise` to compute the standard deviation of the difference of the MRI measurements. Use the pipe `%>%` operator to string multiple functions.
+    
+    iii. use `summarise` to compute the average difference of the MRI measurements. Use the pipe `%>%` operator to string multiple functions.  
+    
+    iv. use `summarise` to compute the standard deviation of the difference of the MRI measurements. Use the pipe `%>%` operator to string multiple functions.  
+    
     v. based on your answers in (iii) and (iv), do you think there is evidence in favor of the initial hypothesis there is difference in the MRI measurements of the volume of the left hippocampus between those affected and unaffected with schizophrenia?   
   
     
@@ -109,9 +113,12 @@ str(cdc)
 
 3. Use `sample()` to generate rolls from biased coint with $Pr(Head) = 0.6$ .
 
-    i) get a sample of size 10 tosses and tally the results  
-    ii) get a sample of size 30 tosses and tally the results   
-    iii) get a sample of size 100 tosses and tally the results  
+    i) get a sample of size 10 tosses and tally the results    
+    
+    ii) get a sample of size 30 tosses and tally the results     
+    
+    iii) get a sample of size 100 tosses and tally the results    
+    
     iv) what do you notice with the proportion of heads in each sample?  
     
 ### Code chunk
