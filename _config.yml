@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 
 # Setup
 title: SIUE Statistical Laboratory Page
-baseurl: https://jpailden.github.io/rstatlab/
+baseurl: ""
 
 # About/contact
 author: Junvie Pailden
