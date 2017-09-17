@@ -1,13 +1,10 @@
 theme: jekyll-theme-cayman
 
 # Setup
-title:        SIUE Statistical Laboratory Page
-tagline:      
-baseurl:      ""
-paginate:     1
+title: SIUE Statistical Laboratory Page
+baseurl: https://jpailden.github.io/rstatlab/
 
 # About/contact
-author:
-  name:       Junvie Pailden
-  url:        http://www.siue.edu/~jpailde/ 
-  email:      jpailde at siue.edu
+author: Junvie Pailden
+author_email: jpailde at siue.edu
+url: http://www.siue.edu/~jpailde/
