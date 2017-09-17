@@ -1,4 +1,6 @@
-Starting Fall 2017, Stat 244 and Stat 380 will be using R software for all laboratory lessons and exercises. This page contains the weekly laboratory materials. 
+written by [Junvie Pailden](http://www.siue.edu/~jpailde/) 
+
+Starting Fall 2017, Stat 244 and Stat 380 will be using R software for all laboratory lessons and exercises. This page contains the weekly laboratory materials.
 
 [R](<https://cran.r-project.org/>) is an open source (free) software for statistical computing and graphics. More information on R in this [page](<http://www.siue.edu/~jpailde/Intro_to_R.html>).
 
