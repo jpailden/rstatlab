@@ -1,0 +1,124 @@
+---
+title: 'Laboratory Exercise Week 5'
+author: "Your Name and Section, 10 pts"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+For this exercise, you will need to use the packages `mosaic` and `dplyr`.
+
+```{r}
+library(mosaic) # load the package mosaic to use its functions
+library(dplyr) # load the package dplyr to use data management functions
+```
+
+
+1. Experiments: For decades it's been suspected that schizophrenia involves anatomical abnormalities in the hippocampus, an area of the brain involved with memory. The following data bearing on this issue are from Suddath et al. (1990) and were used by Ramsey and Schafer (3rd ed., 2013, p. 31. Display 2.2). The researchers obtained MRI measurements of the volume of the left hippocampus from 15 pairs of identical twins discordant for schizophrenia, i.e, one the twin is affected with schizophrenia The data are displayed in the following table. 
+
+### Do not delete this code chunk
+```{r}
+# another way to load a small data set using `read.table()`
+schizophrenia <- read.table(header = T, text="
+pair   affected   unaffected
+1      1.27       1.94
+2      1.63       1.44
+3      1.47       1.56
+4      1.39       1.58
+5      1.93       2.06
+6      1.26       1.66
+7      1.71       1.75
+8      1.67       1.77
+9      1.28       1.78
+10     1.85       1.92
+11     1.02       1.25
+12     1.34       1.93
+13     2.02       2.04
+14     1.59       1.62
+15     1.97       2.08
+")
+is.data.frame(schizophrenia) # check if object `schizophrenia` is a valid data frame
+str(schizophrenia)
+schizophrenia 
+```
+
+
+    i. use `mutate()` to create a new variable `diff` which is the difference of the MRI measurements of each pair.   
+    ii. use the pipe `%>%` operator add the new variable `diff` as column to `schizophrenia`.  
+    iii. use `summarise` to compute the average difference of the MRI measurements. Use the pipe `%>%` operator to string multiple functions.
+    iv. use `summarise` to compute the standard deviation of the difference of the MRI measurements. Use the pipe `%>%` operator to string multiple functions.
+    v. based on your answers in (iii) and (iv), do you think there is evidence in favor of the initial hypothesis there is difference in the MRI measurements of the volume of the left hippocampus between those affected and unaffected with schizophrenia?   
+  
+    
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+
+
+2. The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey run by the [Centers of Disease Control](http://www.cdc.gov/brfss) in the United States. The BRFSS is designed to identify risk factors in the adult population and report emerging health trends. For example, respondents are asked about their diet and weekly physical activity, their HIV/AIDS status, possible tobacco use, and even their level of healthcare coverage.
+
+We only consider a subset of the original survey that contains 20,000 observations.
+
+### Do not delete this code chunk
+```{r}
+cdc <- read.csv("http://www.siue.edu/~jpailde/cdc.csv")
+str(cdc)
+```
+
+    i) How many variables are present in this data set? For each variable, identify its data type (e.g. categorical, continuous).  
+    
+    ii) Use `summarise` to compute the average of the variable `weight`.
+    
+    iii) Use `group_by` to group the rows by `exerany` (exercise any). Repeat part (ii) on this grouped data. Comment on what you observe in the average weights between groups.
+    
+    vi) Repeat part (iii) but now use the grouping variables `smoke100` and `gender`. Comment on what you observe in the average weights between groups.  
+    
+    v) Obtain a random sample of 1000 rows and save this into `csc.samp1`. 
+    
+    vi) Repeat parts (ii) to (v) but only using the subset data `csc.samp1`.  
+    
+    vii) Comment on what you difference you observe (if any) between the results in the original sample and the smaller sample?
+    
+
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+
+
+
+3. Use `sample()` to generate rolls from biased coint with $Pr(Head) = 0.6$ .
+
+    i) get a sample of size 10 tosses and tally the results  
+    ii) get a sample of size 30 tosses and tally the results   
+    iii) get a sample of size 100 tosses and tally the results  
+    iv) what do you notice with the proportion of heads in each sample?  
+    
+### Code chunk
+```{r} 
+# star your code
+
+
+# last R code line
+```
+
