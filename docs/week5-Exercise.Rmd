@@ -96,9 +96,9 @@ str(cdc)
     
     vi) Repeat part (iii) but now use the grouping variables `smoke100` and `gender`. Comment on what you observe in the average weights between groups. Use the pipe `%>%` operator to string multiple functions.  
     
-    v) Obtain a random sample of 1000 rows and save this into `csc.samp1`. 
+    v) Obtain a random sample of 1000 rows and save this into `cdc.samp1`. 
     
-    vi) Repeat parts (ii) to (v) but only using the subset data `csc.samp1`.  Use the pipe `%>%` operator to string multiple functions.  
+    vi) Repeat parts (ii) to (v) but only using the subset data `cdc.samp1`.  Use the pipe `%>%` operator to string multiple functions.  
     
     vii) Comment on what differences you observed (if any) between the results in the original sample and the smaller sample?
     
