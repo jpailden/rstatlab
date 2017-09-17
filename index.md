@@ -56,5 +56,5 @@ Weekly Lesson  |  Weekly Exercise
 [Week 2: Reading Data in R](<https://github.com/jpailden/rstatlab/blob/master/week2.md>) | [Exercise 2](<https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week2-Exercise.Rmd>)
 [Week 3: Numerical and Graphical Summary](<https://github.com/jpailden/rstatlab/blob/master/week3.md>) | [Exercise 3](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week3-Exercise.Rmd)  
 [Week 4: Data Management in R](<https://github.com/jpailden/rstatlab/blob/master/week4.md>) | [Exercise 4](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week4-Exercise.Rmd)  
-Week 5: Producing Data: Randomness and Experiments | Exercise 5
+[Week 5: Experiments, Random Samples, and Simulations in R](https://github.com/jpailden/rstatlab/blob/master/week5.md) | Exercise 5
 
