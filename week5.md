@@ -7,7 +7,6 @@ written by Junvie Pailden
 ``` r
 library(mosaic) # load the package mosaic
 library(dplyr) # load the package dplyr to use data management functions
-library(statsr)
 ```
 
 Designing Experiments
@@ -55,15 +54,15 @@ Alternatively, we randomly select nine subjects to the first treatment using the
 trt1 <- sample_n( AMS.dat, size = 9)
 trt1
 #    gender  age
-# 15   male 14.4
 # 7  female 12.6
-# 16 female 13.5
 # 14 female 13.9
 # 9    male 12.3
-# 12   male 14.1
-# 18   male 14.1
+# 6    male 13.6
+# 2  female 13.3
+# 16 female 13.5
+# 11 female 13.8
+# 10 female 13.7
 # 8  female 13.5
-# 13 female 14.2
 ```
 
 If we want to randomly select 4 males and 5 females separately (this called **blocking** in experiments), we do the following
@@ -102,18 +101,18 @@ AMS.female
 trt1.male <- sample_n( AMS.male, size = 4) # randomly select 4 male subjects
 trt1.male
 #   gender  age
-# 9   male 14.1
-# 2   male 12.4
+# 1   male 12.9
 # 6   male 12.3
-# 8   male 14.4
+# 5   male 13.6
+# 4   male 13.6
 trt1.female <- sample_n( AMS.female, size = 5) # randomly select 5 female subjects
 trt1.female
 #   gender  age
-# 2 female 12.6
-# 3 female 13.5
-# 1 female 13.3
-# 7 female 13.9
 # 6 female 14.2
+# 1 female 13.3
+# 2 female 12.6
+# 4 female 13.7
+# 3 female 13.5
 ```
 
 Random Sampling From an Existing Data Set
@@ -144,29 +143,29 @@ In the package `dplyr` we can use the following functions to select random rows 
 ``` r
 # Sample fixed number per group
 sample_n(mtcars, 10)  # randomly select 10 rows
-#                   mpg cyl  disp  hp drat   wt qsec vs am gear carb
-# Merc 450SE       16.4   8 275.8 180 3.07 4.07 17.4  0  0    3    3
-# Volvo 142E       21.4   4 121.0 109 4.11 2.78 18.6  1  1    4    2
-# Hornet 4 Drive   21.4   6 258.0 110 3.08 3.21 19.4  1  0    3    1
-# Duster 360       14.3   8 360.0 245 3.21 3.57 15.8  0  0    3    4
-# Merc 450SLC      15.2   8 275.8 180 3.07 3.78 18.0  0  0    3    3
-# Maserati Bora    15.0   8 301.0 335 3.54 3.57 14.6  0  1    5    8
-# Dodge Challenger 15.5   8 318.0 150 2.76 3.52 16.9  0  0    3    2
-# Valiant          18.1   6 225.0 105 2.76 3.46 20.2  1  0    3    1
-# Mazda RX4 Wag    21.0   6 160.0 110 3.90 2.88 17.0  0  1    4    4
-# Honda Civic      30.4   4  75.7  52 4.93 1.61 18.5  1  1    4    2
+#                      mpg cyl  disp  hp drat   wt qsec vs am gear carb
+# Volvo 142E          21.4   4 121.0 109 4.11 2.78 18.6  1  1    4    2
+# Pontiac Firebird    19.2   8 400.0 175 3.08 3.85 17.1  0  0    3    2
+# Mazda RX4           21.0   6 160.0 110 3.90 2.62 16.5  0  1    4    4
+# Lincoln Continental 10.4   8 460.0 215 3.00 5.42 17.8  0  0    3    4
+# Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.88 17.0  0  1    4    4
+# Lotus Europa        30.4   4  95.1 113 3.77 1.51 16.9  1  1    5    2
+# Fiat X1-9           27.3   4  79.0  66 4.08 1.94 18.9  1  1    4    1
+# Ferrari Dino        19.7   6 145.0 175 3.62 2.77 15.5  0  1    5    6
+# Maserati Bora       15.0   8 301.0 335 3.54 3.57 14.6  0  1    5    8
+# Ford Pantera L      15.8   8 351.0 264 4.22 3.17 14.5  0  1    5    4
 sample_n(mtcars, 10, replace = TRUE) # randomly select 10 rows with replacement
-#                       mpg cyl disp  hp drat   wt qsec vs am gear carb
-# Valiant              18.1   6  225 105 2.76 3.46 20.2  1  0    3    1
-# Cadillac Fleetwood   10.4   8  472 205 2.93 5.25 18.0  0  0    3    4
-# Datsun 710           22.8   4  108  93 3.85 2.32 18.6  1  1    4    1
-# Duster 360           14.3   8  360 245 3.21 3.57 15.8  0  0    3    4
-# Volvo 142E           21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
-# Merc 230             22.8   4  141  95 3.92 3.15 22.9  1  0    4    2
-# Cadillac Fleetwood.1 10.4   8  472 205 2.93 5.25 18.0  0  0    3    4
-# Merc 280C            17.8   6  168 123 3.92 3.44 18.9  1  0    4    4
-# AMC Javelin          15.2   8  304 150 3.15 3.44 17.3  0  0    3    2
-# Hornet Sportabout    18.7   8  360 175 3.15 3.44 17.0  0  0    3    2
+#                     mpg cyl  disp  hp drat   wt qsec vs am gear carb
+# Ferrari Dino       19.7   6 145.0 175 3.62 2.77 15.5  0  1    5    6
+# Duster 360         14.3   8 360.0 245 3.21 3.57 15.8  0  0    3    4
+# Fiat X1-9          27.3   4  79.0  66 4.08 1.94 18.9  1  1    4    1
+# Volvo 142E         21.4   4 121.0 109 4.11 2.78 18.6  1  1    4    2
+# Honda Civic        30.4   4  75.7  52 4.93 1.61 18.5  1  1    4    2
+# Volvo 142E.1       21.4   4 121.0 109 4.11 2.78 18.6  1  1    4    2
+# Hornet Sportabout  18.7   8 360.0 175 3.15 3.44 17.0  0  0    3    2
+# Camaro Z28         13.3   8 350.0 245 3.73 3.84 15.4  0  0    3    4
+# Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.25 18.0  0  0    3    4
+# Pontiac Firebird   19.2   8 400.0 175 3.08 3.85 17.1  0  0    3    2
 ```
 
 We can also randomly select rows from the data with selection probabilities proportional to a given set or variable.
@@ -175,17 +174,17 @@ We can also randomly select rows from the data with selection probabilities prop
 # select 10 rows with prob'y proportional to mpg size,
 # i.e., higher mpg cars will likely be more selected
 sample_n(mtcars, 10, weight = mpg)
-#                   mpg cyl  disp  hp drat   wt qsec vs am gear carb
-# Maserati Bora    15.0   8 301.0 335 3.54 3.57 14.6  0  1    5    8
-# Toyota Corolla   33.9   4  71.1  65 4.22 1.83 19.9  1  1    4    1
-# Merc 450SLC      15.2   8 275.8 180 3.07 3.78 18.0  0  0    3    3
-# Lotus Europa     30.4   4  95.1 113 3.77 1.51 16.9  1  1    5    2
-# Datsun 710       22.8   4 108.0  93 3.85 2.32 18.6  1  1    4    1
-# Merc 280         19.2   6 167.6 123 3.92 3.44 18.3  1  0    4    4
-# Toyota Corona    21.5   4 120.1  97 3.70 2.46 20.0  1  0    3    1
-# Dodge Challenger 15.5   8 318.0 150 2.76 3.52 16.9  0  0    3    2
-# Ford Pantera L   15.8   8 351.0 264 4.22 3.17 14.5  0  1    5    4
-# AMC Javelin      15.2   8 304.0 150 3.15 3.44 17.3  0  0    3    2
+#                 mpg cyl  disp  hp drat   wt qsec vs am gear carb
+# Merc 450SL     17.3   8 275.8 180 3.07 3.73 17.6  0  0    3    3
+# Fiat 128       32.4   4  78.7  66 4.08 2.20 19.5  1  1    4    1
+# Toyota Corona  21.5   4 120.1  97 3.70 2.46 20.0  1  0    3    1
+# Datsun 710     22.8   4 108.0  93 3.85 2.32 18.6  1  1    4    1
+# Volvo 142E     21.4   4 121.0 109 4.11 2.78 18.6  1  1    4    2
+# Merc 280C      17.8   6 167.6 123 3.92 3.44 18.9  1  0    4    4
+# Valiant        18.1   6 225.0 105 2.76 3.46 20.2  1  0    3    1
+# Merc 280       19.2   6 167.6 123 3.92 3.44 18.3  1  0    4    4
+# Toyota Corolla 33.9   4  71.1  65 4.22 1.83 19.9  1  1    4    1
+# Lotus Europa   30.4   4  95.1 113 3.77 1.51 16.9  1  1    5    2
 ```
 
 -   use `sample_frac()` to sample fixed fraction per group
@@ -193,18 +192,18 @@ sample_n(mtcars, 10, weight = mpg)
 ``` r
 # sample_frac(mtcars) # default, randomly re-arrange all rows
 sample_frac(mtcars, 0.1) # randomly select 10% of the rows
-#                   mpg cyl disp  hp drat   wt qsec vs am gear carb
-# Merc 450SLC      15.2   8  276 180 3.07 3.78 18.0  0  0    3    3
-# Ferrari Dino     19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
-# Pontiac Firebird 19.2   8  400 175 3.08 3.85 17.1  0  0    3    2
+#                     mpg cyl  disp  hp drat   wt qsec vs am gear carb
+# Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.25 18.0  0  0    3    4
+# Fiat 128           32.4   4  78.7  66 4.08 2.20 19.5  1  1    4    1
+# Camaro Z28         13.3   8 350.0 245 3.73 3.84 15.4  0  0    3    4
 sample_frac(mtcars, 0.2) # randomly select 20% of the rows
-#                 mpg cyl  disp  hp drat   wt qsec vs am gear carb
-# Porsche 914-2  26.0   4 120.3  91 4.43 2.14 16.7  0  1    5    2
-# Lotus Europa   30.4   4  95.1 113 3.77 1.51 16.9  1  1    5    2
-# Valiant        18.1   6 225.0 105 2.76 3.46 20.2  1  0    3    1
-# Ford Pantera L 15.8   8 351.0 264 4.22 3.17 14.5  0  1    5    4
-# Toyota Corolla 33.9   4  71.1  65 4.22 1.83 19.9  1  1    4    1
-# Merc 280       19.2   6 167.6 123 3.92 3.44 18.3  1  0    4    4
+#                     mpg cyl  disp  hp drat   wt qsec vs am gear carb
+# Pontiac Firebird   19.2   8 400.0 175 3.08 3.85 17.1  0  0    3    2
+# Duster 360         14.3   8 360.0 245 3.21 3.57 15.8  0  0    3    4
+# Merc 280C          17.8   6 167.6 123 3.92 3.44 18.9  1  0    4    4
+# Mazda RX4 Wag      21.0   6 160.0 110 3.90 2.88 17.0  0  1    4    4
+# Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.25 18.0  0  0    3    4
+# Honda Civic        30.4   4  75.7  52 4.93 1.61 18.5  1  1    4    2
 ```
 
 ------------------------------------------------------------------------
@@ -226,11 +225,11 @@ rolls <- sample(x = dice, size = 1000, replace=TRUE)
 tally(rolls) # tally the results
 # X
 #   1   2   3   4   5   6 
-# 150 173 164 182 176 155
+# 147 184 178 164 131 196
 tally(rolls)/1000  # proportion of outcomes, 1/6 for each
 # X
 #     1     2     3     4     5     6 
-# 0.150 0.173 0.164 0.182 0.176 0.155
+# 0.147 0.184 0.178 0.164 0.131 0.196
 ```
 
 The sampling need not be uniform or equally likely. Probabilities of selecting the values in *x* can be specified with the argument prob.
@@ -246,7 +245,7 @@ coin.toss <- sample(coin,
 tally(coin.toss) # tally the results
 # X
 # Head Tail 
-#   57   43
+#   62   38
 ```
 
 We can repeat this sampling generating different results.
@@ -283,11 +282,11 @@ s.work <- sample(event.accident,
 tally(s.work) # count of type of accident
 # X
 #  contact exposure    falls    fires  transpo violence 
-#       86       36       63       15      233       67
+#       70       42       62       15      205      106
 tally(s.work)/500 # convert to proportions
 # X
 #  contact exposure    falls    fires  transpo violence 
-#    0.172    0.072    0.126    0.030    0.466    0.134
+#    0.140    0.084    0.124    0.030    0.410    0.212
 ```
 
 If we run the same experiment again, we might not get the same outcomes.
@@ -300,5 +299,5 @@ tally(sample(event.accident,
                  replace = TRUE))
 # X
 #  contact exposure    falls    fires  transpo violence 
-#       84       48       71       15      191       91
+#       66       46       68       21      217       82
 ```
