@@ -94,7 +94,7 @@ str(cdc)
 
 > Do not print the data frame (too long, 20K rows), just print the average weights.   
     
-    vi) Repeat part (iii) but now use the grouping variables `smoke100` and `gender`. Comment on what you observe in the average weights between groups. Use the pipe `%>%` operator to string multiple functions.  
+    iv) Repeat part (iii) but now use the grouping variables `smoke100` and `gender`. Comment on what you observe in the average weights between groups. Use the pipe `%>%` operator to string multiple functions.  
     
     v) Obtain a random sample of 1000 rows and save this into `cdc.samp1`. 
     
