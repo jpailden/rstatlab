@@ -20,16 +20,16 @@ To generate an outcome from this experiment, we use the `rbinom()` function with
 ``` r
 # generated number of success in 20 trials
 rbinom(n = 1, size = 20, prob = 0.6)
-# [1] 10
+# [1] 15
 ```
 
 We can generate multiple random variable values, say `n = 50`, from the same family `Binomial(size = 20, prob = 0.6)`.
 
 ``` r
 (x <- rbinom(n = 50, size = 20, prob = 0.6)) # generate 50 values
-#  [1] 11 12  8 14 14 10 14 12 12  8 12 10 15 11 11 14 15 11 13 12 13 11 13
-# [24] 15 10 11 10 14 12 13 15 13 12 12 16 13 14 10 12 13  7  8  9 14  9 14
-# [47] 12 14 11  9
+#  [1] 15 15 12 11  9 14 14 12 14 15 14 10  8 13 15 13 14 14 12 10 12 11 13
+# [24] 10 11 15 12 10 10 12 11 13 13 15 13 11 13 11 11 11 10 13 10 12 11 11
+# [47] 13  9  9 12
 histogram(x) # plot a histogram of the generated values
 ```
 
@@ -48,19 +48,23 @@ As of September 16, 2017, Jose Altuva's hitting average was registered at .347. 
 
 ``` r
 (H1 <- rbinom(n = 1, size = 40, prob = 0.357)) # generate 1 possible number of hits in the next 20 games
-# [1] 14
+# [1] 18
 H1000 <- rbinom(n = 1000, size = 40, prob = 0.357) # generate 1000 possible number of hits in the next 20 games
 tally(H1000)
 # X
-#   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23 
-#   6  10  15  39  47  73 101 119 124 112 110  97  60  42  26  13   5   1
+#   4   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22 
+#   1   4   7  15  23  49  72  94 117 138 135 109  82  66  42  24  15   4 
+#  23  24 
+#   2   1
 favstats(H1000)
 #  min Q1 median Q3 max mean   sd    n missing
-#    6 12     14 16  23 14.2 3.11 1000       0
+#    4 12     14 16  24 14.4 3.02 1000       0
 histogram(H1000)
 ```
 
-<img src="figures/03-wk06-1.png" style="display: block; margin: auto;" /> From the generated histogram we can say that Altuva's number of hits is most likely between 10 or 20 in the next 40 at bats (AB).
+<img src="figures/03-wk06-1.png" style="display: block; margin: auto;" />
+
+From the generated histogram we can say that Altuva's number of hits is most likely between 10 or 20 in the next 40 at bats (AB).
 
 We can compute the probability that Jose Altuva will hit a given number (or range) of hits. This is the same as computing the Binomial Probability (Mass) Function value. We can find probability that Altuva will get 15 hits in the next 40 at bats (AB) by using the base function `dbinom`.
 
@@ -148,12 +152,12 @@ To generate a sample from any normal distribution, we use the `rnorm` function w
 # 100 generated values from standard normal dist
 z <- rnorm(n = 100, mean = 0, sd = 1)
 z[1:20] # first 20 values
-#  [1] -1.2749 -0.7508  0.9188  0.5337  0.6756  1.5277  2.2338 -0.6073
-#  [9] -0.1576  1.4140  1.2158 -0.5206  0.6231 -0.6735  0.1824  1.4418
-# [17] -0.0275  0.4765  0.1595 -0.4786
+#  [1]  1.47783 -1.45545  0.05823 -0.08953  0.22831  1.09509 -0.07409
+#  [8]  1.89706  0.00805  0.86003  1.44508 -0.13667  0.05425 -0.34193
+# [15]  0.88113  0.28428  0.26341  0.72973  0.25211  0.77620
 favstats(z) # summary statistics
-#    min     Q1  median    Q3  max   mean   sd   n missing
-#  -1.82 -0.722 -0.0506 0.882 2.47 0.0667 1.03 100       0
+#    min     Q1 median    Q3  max  mean   sd   n missing
+#  -2.58 -0.433 0.0562 0.444 2.33 0.088 0.93 100       0
 histogram(z) # symmetric bell-shaped histogram
 ```
 
