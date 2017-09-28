@@ -27,9 +27,9 @@ We can generate multiple random variable values, say `n = 50`, from the same fam
 
 ``` r
 (x <- rbinom(n = 50, size = 20, prob = 0.6)) # generate 50 values
-#  [1] 15 15 12 11  9 14 14 12 14 15 14 10  8 13 15 13 14 14 12 10 12 11 13
-# [24] 10 11 15 12 10 10 12 11 13 13 15 13 11 13 11 11 11 10 13 10 12 11 11
-# [47] 13  9  9 12
+#  [1]  9 16 15  9 13 14 15 11 18 13 13 14 11 10 11 15 13 15 16 12 16 12 11
+# [24] 12 12 13 11 15  8 12 11 11 12  7 12 11 15 14 10 14 17 11 13 11 11  9
+# [47] 14 14 11 10
 histogram(x) # plot a histogram of the generated values
 ```
 
@@ -48,17 +48,15 @@ As of September 16, 2017, Jose Altuva's hitting average was registered at .347. 
 
 ``` r
 (H1 <- rbinom(n = 1, size = 40, prob = 0.357)) # generate 1 possible number of hits in the next 20 games
-# [1] 18
+# [1] 12
 H1000 <- rbinom(n = 1000, size = 40, prob = 0.357) # generate 1000 possible number of hits in the next 20 games
 tally(H1000)
 # X
-#   4   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22 
-#   1   4   7  15  23  49  72  94 117 138 135 109  82  66  42  24  15   4 
-#  23  24 
-#   2   1
+#   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23 
+#   3   3  12  17  51  82 109 117 123 115 124  96  64  25  25  20   8   6
 favstats(H1000)
 #  min Q1 median Q3 max mean   sd    n missing
-#    4 12     14 16  24 14.4 3.02 1000       0
+#    6 12     14 16  23 14.5 3.02 1000       0
 histogram(H1000)
 ```
 
@@ -152,12 +150,12 @@ To generate a sample from any normal distribution, we use the `rnorm` function w
 # 100 generated values from standard normal dist
 z <- rnorm(n = 100, mean = 0, sd = 1)
 z[1:20] # first 20 values
-#  [1]  1.47783 -1.45545  0.05823 -0.08953  0.22831  1.09509 -0.07409
-#  [8]  1.89706  0.00805  0.86003  1.44508 -0.13667  0.05425 -0.34193
-# [15]  0.88113  0.28428  0.26341  0.72973  0.25211  0.77620
+#  [1]  1.2488 -1.4574  0.7477 -0.4434  0.3446  0.3204  0.0746  0.9607
+#  [9]  1.8124  0.9382  1.4640  0.6659 -0.4938  0.2548  0.3006 -0.8409
+# [17] -0.1851  0.2331  1.0472 -2.1684
 favstats(z) # summary statistics
-#    min     Q1 median    Q3  max  mean   sd   n missing
-#  -2.58 -0.433 0.0562 0.444 2.33 0.088 0.93 100       0
+#    min     Q1 median    Q3  max  mean sd   n missing
+#  -2.28 -0.495 0.0763 0.764 3.01 0.104  1 100       0
 histogram(z) # symmetric bell-shaped histogram
 ```
 
@@ -187,7 +185,18 @@ The probability that the maximum speed is at most 50 km/h can be computed in R u
 # Pr(X < = 50) = Pr(X < 50) 
 pnorm(q = 50, mean = 46.8, sd = 1.75)
 # [1] 0.966
+# we can add a graph of the shaded tails using xpnorm
+xpnorm(q = 50, mean = 46.8, sd = 1.75)
+# 
+# If X ~ N(46.8, 1.75), then
+#   P(X <= 50) = P(Z <= 1.829) = 0.9663
+#   P(X >  50) = P(Z >  1.829) = 0.03373
+# 
 ```
+
+<img src="figures/10-wk06-1.png" style="display: block; margin: auto;" />
+
+    # [1] 0.966
 
 > For any continuous variables `X`, `Pr(X = c) = 0`. So `Pr(X <= c) = Pr(X < c)`.
 
@@ -195,9 +204,20 @@ Also, the probability that the maximum speed is at least 48 km/h is
 
 ``` r
 # Pr(X > 48) = 1 - Pr(X < 48) 
-1 - pnorm(q = 50, mean = 46.8, sd = 1.75)
-# [1] 0.0337
+1 - pnorm(q = 48, mean = 46.8, sd = 1.75)
+# [1] 0.246
+# using xpnorm will add a shaded tail area
+xpnorm(q = 48, mean = 46.8, sd = 1.75)
+# 
+# If X ~ N(46.8, 1.75), then
+#   P(X <= 48) = P(Z <= 0.6857) = 0.7536
+#   P(X >  48) = P(Z >  0.6857) = 0.2464
+# 
 ```
+
+<img src="figures/11-wk06-1.png" style="display: block; margin: auto;" />
+
+    # [1] 0.754
 
 We can also find the probability that the maximum speed is between 47 and 49 km/h
 
@@ -205,7 +225,18 @@ We can also find the probability that the maximum speed is between 47 and 49 km/
 # Pr(47 < X < 49) = Pr(X < 49) - Pr(X < 47)
 pnorm(q = 49, mean = 46.8, sd = 1.75) - pnorm(47, mean = 46.8, sd = 1.75)
 # [1] 0.35
+# using xpnorm
+xpnorm( c(47, 49), mean = 46.8, sd = 1.75)
+# 
+# If X ~ N(46.8, 1.75), then
+#   P(X <= 47) = P(Z <= 0.1143) = 0.5455    P(X <= 49) = P(Z <= 1.2571) = 0.8956
+#   P(X >  47) = P(Z >  0.1143) = 0.4545    P(X >  49) = P(Z >  1.2571) = 0.1044
+# 
 ```
+
+<img src="figures/12-wk06-1.png" style="display: block; margin: auto;" />
+
+    # [1] 0.545 0.896
 
 The function `qnorm` computes the *p*-th percentile (or quantile) of the normal distribution. For example, the 40th percentile of the standard normal is the value of *z*<sub>0</sub> such that *P*(*Z* &lt; *z*<sub>0</sub>)=0.40.
 
