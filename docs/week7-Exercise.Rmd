@@ -42,8 +42,23 @@ ceo_salary <- read.csv("https://www.siue.edu/~jpailde/CEO_Salary_2012.csv")
 # last R code line
 ```
 
+2. Rockwell hardness of pins of a certain type is known to have a mean value of 50 and standard deviation of 1.2.
 
-2. Suppose that a random sample of size 64 is to be selected from a population with mean 40 and standard deviation 5.
+    i) If the distribution is normal, what is the probability that the sample mean hardness for a random sample of 9 pins is at least 51?     
+
+    ii) Without assuming population normality, what is the  (approximate) probability that the sample mean hardness for a random sample of 40 pins is at least 51?
+  
+
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+
+
+3. Suppose that a random sample of size 64 is to be selected from a population with mean 40 and standard deviation 5.
 
     i) What are the mean and standard deviation of the sampling distribution of the sample mean?
     
@@ -58,17 +73,3 @@ ceo_salary <- read.csv("https://www.siue.edu/~jpailde/CEO_Salary_2012.csv")
 ```
 
 
-3. Rockwell hardness of pins of a certain type is known to have a mean value of 50 and standard deviation of 1.2.
-
-    i) If the distribution is normal, what is the probability that the sample mean hardness for a random sample of 9 pins is at least 51?     
-
-    ii) Without assuming population normality, what is the  (approximate) probability that the sample mean hardness for a random sample of 40 pins is at least 51?
-  
-
-### Code chunk
-```{r} 
-# start your code
-
-
-# last R code line
-```
