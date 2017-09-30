@@ -1,0 +1,74 @@
+---
+title: 'Laboratory Exercise Week 7'
+author: "Your Name and Section, 10 pts"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
+
+```{r}
+library(mosaic) # load the package mosaic to use its functions
+```
+
+1. Consider the population of CEO salaries in the lesson this week.   
+
+    i) Select a random sample of 40 CEO's and compute the sample mean salary and sample standard deviation salary.  
+    
+    ii) Use the `do()` function to compute the sample mean of 100 randomly selected samples.  Plot the histogram of these 100 sample means.  
+    
+    iii) Compute the average and standard deviation of these 100 sample means. Are the values what you expect from the properties of the sampling distribution.  
+
+### Code chunk
+```{r} 
+# start your code
+ceo_salary <- read.csv("https://www.siue.edu/~jpailde/CEO_Salary_2012.csv")
+
+
+# last R code line
+```
+
+
+2. Suppose that a random sample of size 64 is to be selected from a population with mean 40 and standard deviation 5.
+
+    i) What are the mean and standard deviation of the sampling distribution of the sample mean?
+    
+    ii) What is the approximate probability that the sample mean will be within 0.5 of the population mean?  
+    
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+
+
+3. Rockwell hardness of pins of a certain type is known to have a mean value of 50 and standard deviation of 1.2.
+
+    i) If the distribution is normal, what is the probability that the sample mean hardness for a random sample of 9 pins is at least 51?     
+
+    ii) Without assuming population normality, what is the  (approximate) probability that the sample mean hardness for a random sample of 40 pins is at least 51?
+  
+
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
