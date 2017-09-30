@@ -47,7 +47,6 @@ Weekly Lesson  |  Weekly Exercise
             # Code Chunks
             ```{r }
             
- 
             ```
         ```
         
