@@ -1,4 +1,4 @@
-Week 7: Sampling Variability and Sampling Distribution of the Sample Mean
+Week 7: Sampling Distribution of the Sample Mean
 ================
 written by Junvie Pailden
 
@@ -69,45 +69,45 @@ Let us select a random sample of 5 CEO's from this population and compute the sa
 ``` r
 # randomly select rows without replacement using `sample_n`
 (samp1 <- sample_n(ceo_salary, size = 5)) 
-#     Rank              Name                   Company Annual.pay Age
-# 465  465    Marc R Benioff            Salesforce.com       1.80  47
-# 219  219     William P Utt                       KBR       7.90  55
-# 435  435       Rory P Read    Advanced Micro Devices       2.56  50
-# 57    57 Scott D Sheffield Pioneer Natural Resources      20.05  59
-# 230  230    Timothy L Main             Jabil Circuit       7.58  54
+#     Rank               Name                                 Company
+# 130  130 Richard H Anderson                         Delta Air Lines
+# 486  486   Wendy C Waugaman American Equity Investment Life Holding
+# 137  137       Leonard Bell                 Alexion Pharmaceuticals
+# 247  247  Brian Duperreault                    Marsh & McLennan Cos
+# 303  303    Mark S McAndrew                               Torchmark
+#     Annual.pay Age
+# 130     13.175  56
+# 486      0.915  51
+# 137     12.715  53
+# 247      7.045  64
+# 303      5.600  61
 (xbar1 <- mean(~ Annual.pay, data = samp1))
-# [1] 7.98
+# [1] 7.89
 ```
 
-The sample mean salary of $7.979 Mil for the 5 CEO's selected in sample 1 is different from the population mean salary $10.539 Mil by about $-2.56 Mil.
+The sample mean salary of $7.89 Mil for the 5 CEO's selected in sample 1 is different from the population mean salary $10.539 Mil by about $-2.649 Mil.
 
 Is this difference in sample mean salary common, or is this particular sample mean salary unusually far away from the true mean? Taking more samples will provide some additional insight.
 
 ``` r
 (samp2 <- sample_n(ceo_salary, size = 5))
-#     Rank                Name                                Company
-# 359  359  Vincent A Forlenza                      Becton, Dickinson
-# 267  267         David Simon                   Simon Property Group
-# 254  254        Peter J Rose Expeditors International of Washington
-# 343  343 W Benjamin Moreland             Crown Castle International
-# 403  403    George A Scangos                            Biogen Idec
-#     Annual.pay Age
-# 359       4.21  59
-# 267       6.51  50
-# 254       6.81  69
-# 343       4.43  48
-# 403       3.21  64
+#     Rank            Name          Company Annual.pay Age
+# 252  252 Wendell P Weeks          Corning       6.93  52
+# 193  193    John F Coyne  Western Digital       9.06  62
+# 311  311 Robert Greifeld Nasdaq OMX Group       5.25  54
+# 134  134      Hugh Grant         Monsanto      12.84  54
+# 429  428   John P Jumper             SAIC       2.75  67
 (xbar2 <- mean(~ Annual.pay, data = samp2))
-# [1] 5.03
+# [1] 7.37
 (samp3 <- sample_n(ceo_salary, size = 5))
-#     Rank              Name                Company Annual.pay Age
-# 355  355      Mark A Blinn              Flowserve       4.27  50
-# 401  401 Willard D Oberton               Fastenal       3.26  53
-# 198  198 Timothy E Guertin Varian Medical Systems       8.76  63
-# 440  440      Debra L Reed          Sempra Energy       2.44  56
-# 445  445  Jeffery W Yabuki                 Fiserv       2.31  52
+#     Rank             Name               Company Annual.pay Age
+# 454  454  Edward J Bonach         CNO Financial       2.08  58
+# 304  304    Harold G Hamm Continental Resources       5.50  66
+# 318  318   Dennis R Glass      Lincoln National       5.04  62
+# 118  118 Scott A McGregor              Broadcom      14.01  56
+# 95    95    James J Mulva        ConocoPhillips      15.62  65
 (xbar3 <- mean(~ Annual.pay, data = samp3))
-# [1] 4.21
+# [1] 8.45
 ```
 
 Let us repeat this process of selecting a random sample and computing the sample mean 500 times. The `do()` function in the `mosaic` package repeats some operation many times, and collects the results in a data frame.
@@ -118,18 +118,18 @@ simulated.means <- do(500)*mean(~ Annual.pay,
 # data frame containing the 500 computed sample means
 head(simulated.means)
 #    mean
-# 1  5.94
-# 2 12.92
-# 3  7.76
-# 4 12.22
-# 5 14.91
-# 6 12.57
+# 1 12.88
+# 2  3.70
+# 3 16.25
+# 4 15.76
+# 5  6.26
+# 6  6.97
 # mean of the sample means
 (mu.xbar <- mean(~ mean, data = simulated.means))
-# [1] 10.9
+# [1] 10.5
 # standard deviaton of the sample means
 (std.xbar <- sd(~ mean, data = simulated.means))
-# [1] 5.18
+# [1] 4.76
 # histogram of the sample means
 histogram(~ mean, data = simulated.means, 
           main = "Sample Mean Salary Distribution", 
@@ -142,15 +142,15 @@ The figure above is a density histogram of the 500 sample mean salaries computed
 
 > Sampling distribution: The distribution that would be formed by considering the value of a sample statistic for every possible different sample of a given size from a population.
 
-The center of the sample mean distribution 10.868 is very close to the value of the population mean salary 10.539.
+The center of the sample mean distribution 10.491 is very close to the value of the population mean salary 10.539.
 
 ``` r
 # true mean, and average of the sample means
 c(mu, mu.xbar)
-# [1] 10.5 10.9
+# [1] 10.5 10.5
 # true standard deviation, and standard deviation of the sample means
 c(sigma, std.xbar)
-# [1] 11.47  5.18
+# [1] 11.47  4.76
 sigma/sqrt(5)
 # [1] 5.13
 ```
@@ -209,7 +209,7 @@ Although the population salary distribution is not normal, we can perform normal
 
 When a sample of 50 CEO's is randomly selected from the data `ceo_salary`, we can compute the following:
 
-1.  probability that the sample mean salary is below $11 Mil
+    i) probability that the sample mean salary is below $11 Mil
 
 ``` r
 # divide the original standard deviotion by sqrt(50)
@@ -227,7 +227,7 @@ xpnorm(q = 11, mean = mu, sd = sigma/sqrt(50))
 
     # [1] 0.612
 
-1.  probability that the sample mean salary is between $10 Mil and $11 Mil.
+    ii) probability that the sample mean salary is between \$10 Mil and \$11 Mil.
 
 ``` r
 pnorm(q = 11, mean = mu, sd = sigma/sqrt(50)) - pnorm(q = 10, mean = mu, sd = sigma/sqrt(50))
@@ -243,13 +243,5 @@ xpnorm(q = c(10, 11), mean = mu, sd = sigma/sqrt(50))
 <img src="figures/10-wk07-1.png" style="display: block; margin: auto;" />
 
     # [1] 0.370 0.612
-
-1.  how large should the sample mean salary be so that it can be considered in the top 15%
-
-``` r
-# lower tail is 1 - 0.15 = 0.85
-qnorm(p = 1 - 0.15, mean = mu, sd = sigma/sqrt(50) )
-# [1] 12.2
-```
 
 ------------------------------------------------------------------------
