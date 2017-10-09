@@ -78,13 +78,13 @@ histogram(X1/500, xlab = "Sample Conversion Rates", fit = "Normal")  # histogram
 
 ``` r
 mean(~ X1) # sample mean of X
-# [1] 50.9
+# [1] 51.4
 mean(~ X1/500) # sample mean of X/n
-# [1] 0.102
+# [1] 0.103
 sd(~ X1) # sample std deviation of X
-# [1] 6.76
+# [1] 7.5
 sd(~ X1/500) # sample std deviation of X/n
-# [1] 0.0135
+# [1] 0.015
 ```
 
 In this experiment, the population characteristics of `X` and `X/500`
@@ -135,7 +135,7 @@ As an alternative to a point estimate, we can use the sample data to report an i
 
 For example, we can be confident that for a weekly traffic of 500, the true conversion rate `p` (if we don't know this) is in the interval from 0.06 to 0.12. The width of this interval reflects the how precise the information we have about the value of `p`.
 
-If we rather have the interval .01 to .30 as the pluasible interval for `p` then it reflects how imprecise the knowledge we have about the value of `p`.
+If we rather have the interval .01 to .30 as the plausible interval for `p` then it reflects how imprecise the knowledge we have about the value of `p`.
 
 > A confidence interval is a interval of plausible values for a population characteristic (e.g. population proportion, population mean).
 
@@ -181,3 +181,5 @@ prop.test(x = 45, n = 500, conf.level = 0.95)
 #    p 
 # 0.09
 ```
+
+------------------------------------------------------------------------
