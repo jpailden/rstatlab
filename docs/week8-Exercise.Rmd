@@ -1,0 +1,60 @@
+---
+title: 'Laboratory Exercise Week 8'
+author: "Your Name and Section, 10 pts"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
+
+```{r}
+library(mosaic) # load the package mosaic to use its functions
+```
+
+1. The study "Digital Footprints" ([Pew Internet and American Life Project]("Digital Footprints" (Pew Internet and American Life Project)) reported that 45\% of Internet users have searched for information about themselves online. The 47\% figure was based on a random sample of Internet users. Suppose that the sample size was `n = 400`.  
+
+  i) Use this information to estimate the true proportion of Internet users who searched information about themselves using a default 95\% confidence interval.    
+  
+  ii) Repeat (i) but instead use a 98\% Confidence Level. Use function `prop.test()`.  
+  
+  iii) What is the main difference between the intervals computed in (i) and (ii)? What do you think is the role of the confidence level in determining the precision of the confidence interval estimate?  
+  
+  
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+  
+2. The article ["CSI Effect Has Juries Wanting More Evidence" (USA Today, 2004)](https://usatoday30.usatoday.com/news/nation/2004-08-05-csi-effect_x.htm) examines how the popularity of crime-scene investigation television shows in influencing jurors' expectation of what evidence should be produced at a trial. In a survey of 500 potential jurors, one study found that 350 were regular watchers of at least one crime-scene forensics television series.  
+ 
+    i) Assuming that it is reasonable to regard this sample of 500 potential jurors as representative of potential jurors in the US, use the given information to construct and interpret a 95\% confidence interval for the proportion of all potential jurors who regularly watch at least one crime-scene investigation series.  
+    
+    ii) Using the same sample proportion as part (i), construct a 95\% confidence interval for same proportion but instead use a sample size of 50.   
+    
+    iii) What is the main difference between the confidence intervals computed in part (i) and (ii)? What do you think is the role of the sample size in determining the precision the confidence interval estimate?
+    
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+  
