@@ -8,8 +8,8 @@ written by Junvie Pailden
 library(mosaic) # load the package mosaic
 ```
 
-One-sample inference on the mean
---------------------------------
+Inference on a Single Mean (One Population)
+-------------------------------------------
 
 Last week we look at estimating the true proportion of conversion rates (new website accounts) by constructing confidence interval estimates. It is also important to estimate the average time visitors browse the website. To do this, we need to look at inferential methods on the mean.
 
@@ -55,7 +55,9 @@ histogram(~ weight, data = chickwts, fit = "normal")
 qqmath(~ weight, data = chickwts)
 ```
 
-<img src="figures/03-wk09-2.png" style="display: block; margin: auto;" /> Note from the histogram and QQ-plot that it is indeed reasonable to assume that the data `weigth` is a sample from a Normal distribution.
+<img src="figures/03-wk09-2.png" style="display: block; margin: auto;" />
+
+Note from the histogram and QQ-plot that it is indeed reasonable to assume that the data `weigth` is a sample from a Normal distribution.
 
 We use the `t.test` function included in the package `mosaic`. This version of the `t.test` follows formula interface.
 
