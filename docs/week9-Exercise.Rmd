@@ -1,0 +1,81 @@
+---
+title: 'Laboratory Exercise Week 9'
+author: "Your Name and Section, 10 pts"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
+
+```{r}
+library(mosaic) # load the package mosaic to use its functions
+```
+
+1. Medical research has shown that repeated interval for extensions beyond 20 degrees increases the risk of wrist and hand injuries. Each of 24 students at Cornell University used a proposed new computer mouse design, and while using the mouse, each student's wrist extension was recorded. 
+
+```{r}
+wrist <- data.frame(ID = 1:24,
+          extension = c(27, 28, 24, 26, 27, 25, 25, 24, 24, 24, 25, 28, 22, 25, 24, 28, 27, 26, 31, 25, 28, 27, 27, 25))
+```
+
+  i) Compute the mean and standard deviation of the wrist extensions data above. Describe the sample using these summaries.  
+ 
+  ii) Create a histogram and QQ-plot of the wrist extensions. Is the normality assumption reasonable?  
+  
+  iii) Use the data to estimate the mean wrist extension for people using this new mouse design using a 97\% confidence interval. Provide an interpretation of this interval.  
+  
+  
+  iv) Use the data to test the hypothesis that the mean wrist extension for people using this new design is greater than 20 degrees. Use a alpha = 0.01 (1\%) level of significance.  
+  
+  
+  
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+
+
+2. Recall the Going Wireless data first mentioned Week 2 of this class. The article Going Wireless (AARP Bulletin, June 2009) reported the estimated percentage of house- holds with only wireless phone service (no land line) for the 50 U.S. states and the District of Columbia. In the accompanying data table, each state was also classified into one of three geographical regions—West (W), Middle states (M), and East (E). Consider only the variable `Wireless` in this data.
+
+```{r}
+wireless.data <- read.csv("https://goo.gl/72BKSf", header = TRUE)
+str(wireless.data)
+favstats(~Wireless, data = wireless.data)
+t.test(~Wireless, data = wireless.data, mu = 17, alternative = "less")
+```
+
+  i) Compute the mean and standard deviation of the wireless data above. Describe the sample using these summaries.  
+ 
+  ii) Create a histogram and QQ-plot of the wireless data. Is the normality assumption reasonable?  
+  
+  iii) Use the data to estimate the mean wireless percentage per state using a 90\% confidence interval. Provide an interpretation of this interval.  
+  
+  
+  iv) Use the data to test the hypothesis that the mean  wireless percentage per state is less than 17. Use a alpha = 0.05 (5\%) level of significance.  
+  
+  
+  
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
