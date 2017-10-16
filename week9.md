@@ -21,9 +21,9 @@ has a `t` distribution with `n-1` degrees of freedom, where `Xbar` is sample ave
 
 ### What is a `t`-distribution?
 
-A `t`-distribution is very similar in shape to the standard normal distribution (`Z ~ N(0,1)`) in the sense that both distributions are bell shaped and centered at zero. The degrees of freedom (`df`) of a `t`-distribution is the unique parameter that determines the spread of the t-distribution. As the number of degrees increases, the spread of the corresponding `t`-distribution decreases and its shape will approach the shape of the standard normal distribution.
+The `t`-distribution is very similar in shape to the standard normal distribution (`Z ~ N(0,1)`) in the sense that both distributions are bell shaped and centered at zero. The degrees of freedom (`df`) of a `t`-distribution is the unique parameter that determines the spread of the t-distribution. As the number of degrees increases, the spread of the corresponding `t`-distribution decreases and its shape will approach the shape of the standard normal distribution.
 
-<img src="figures/01-wk09-1.png" style="display: block; margin: auto;" /><img src="figures/01-wk09-2.png" style="display: block; margin: auto;" /><img src="figures/01-wk09-3.png" style="display: block; margin: auto;" /><img src="figures/01-wk09-4.png" style="display: block; margin: auto;" />
+<img src="figures/01-wk09-1.png" style="display: block; margin: auto;" />
 
 ### Using `t.test` function
 
@@ -39,11 +39,13 @@ favstats(~ weight, data = chickwts)
 #  108 204    258 324 423  261 78.1 71       0
 ```
 
-The sample mean weight is 261 g with a standard deviation of 78.71 g.
+The sample mean weight is 261 g with a standard deviation of 78.71 g. The mean and median are also close which suggests that weight data is symmetric around the mean.
 
 The `R` function `t.test` performs the calculation for the traditional inference procedures for the mean. Before we use `t.test`, we should check if it is reasonable to assume the `weight`'s are normally distributed. We create two plots: histogram and normal QQ (Quantile-Quantile) plot.
 
-A QQ-plot is used to check whether a variable follows a known family of distribution (e.g. normal. A QQ-plot is a scatterplot created by plotting the sample quantile of the variable against the quantile of the reference distribution. If both sets quantiles came from the same distribution, we should see the points forming a line that's roughly straight. The `qqmath` function produces a normal QQ-plot of the variable.
+A QQ-plot is used to check whether a data follows a known family of distribution (e.g. normal). A normal QQ-plot is a scatterplot created by plotting the sample quantile of the variable against the reference normal quantile. If the sample quantile matches the quantile of the normal quantile, we should see the points forming a line that's roughly straight. In other words, if the points in the QQ-plot follow a straight line, then it is reasonable to assume that the data follows a normal distribution.
+
+The `qqmath` function in the mosaic package produces a normal QQ-plot of the data.
 
 ``` r
 histogram(~ weight, data = chickwts, fit = "normal")
