@@ -20,6 +20,7 @@ Weekly Lesson  |  Weekly Exercise
 [Week 6: Probability Models in R](https://github.com/jpailden/rstatlab/blob/master/week6.md) | [Exercise 6](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week6-Exercise.Rmd)  
 [Week 7: Sampling Variability and Sampling Distribution of the Sample Mean](https://github.com/jpailden/rstatlab/blob/master/week7.md) | [Exercise 7](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week7-Exercise.Rmd)
 [Week 8: Sample Proportion and Confidence Interval](https://github.com/jpailden/rstatlab/blob/master/week8.md) | [Exercise 8](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week8-Exercise.Rmd)
+[Week 9: Inference About the Single Mean](https://github.com/jpailden/rstatlab/blob/master/week9.md) | [Exercise 8]()
 
 ***
 #### How to download R?
