@@ -1,0 +1,111 @@
+---
+title: 'Laboratory Exercise Week 9'
+author: "Your Name and Section, 10 pts"
+date: "Todays Date"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Directions*: 
+
+* Write your R code inside the code chunks after each question.
+* Write your answer comments after the `#` sign.
+* To generate the word document output, click the button `Knit` and wait for the word document to appear.
+* RStudio will prompt you (only once) to install the `knitr` package.
+* Submit your completed laboratory exercise using Blackboard's Turnitin feature. Your Turnitin upload link is found on your Blackboard Course shell under the Laboratory folder.
+
+***
+
+For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
+
+```{r}
+library(mosaic) # load the package mosaic to use its functions
+```
+
+1. The experimental data below contains food intake (in Kcal) for 15 men on the day following two nights of only 4 hours of sleep each night and for 15 mean on the day following two nights of 8 hours of sleep each each night. The mean participating in this experiment were randomly assigned to one of the two sleep conditions.
+
+```{r}
+four.hr.grp <- c(3585, 4470, 3068, 5338, 2221, 4791, 4435, 3099, 3187, 3901, 3868, 3869, 4878, 3632, 4518)  
+eight.hr.grp <- c(4965, 3918, 1987, 4993, 5220, 3653, 3510, 3338, 4100, 5792, 4547, 3319, 4304, 4057)
+```
+
+  i) Compute the mean and standard deviation of the two groups. Comment on what you see.  
+  ii) Create a boxplot and histogram (with a fitted normal density curve) for the food intake in the two groups. Is the normal distribution a reasonable assumption for the sodium intake in both classes?  
+  iii) Carry out a two-sample t test with alpha = 0.05 to determine if there is a significant difference in mean food intake for the two different sleep conditions.  
+  iv) State the results of your t-test. Can you make conclusive statement based on the information in your data? Why?    
+
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
+  
+
+2. Instructors in two nutrition education programs have their SNAP-Ed students keep diaries of what they eat for a week, and then calculate the daily sodium intake in milligrams.  Since the classes have received different nutrition education programs, they want to see if the mean sodium intake is the same for both classes. 
+
+The data are displayed in the table below:
+
+```{r}
+sodium <- read.table(header = T, text ="
+Instructor       Student  Sodium
+'Brendon Small'  a        1200
+'Brendon Small'  b        1400
+'Brendon Small'  c        1350
+'Brendon Small'  d         950
+'Brendon Small'  e        1400
+'Brendon Small'  f        1150
+'Brendon Small'  g        1300
+'Brendon Small'  h        1325
+'Brendon Small'  i        1425
+'Brendon Small'  j        1500
+'Brendon Small'  k        1250
+'Brendon Small'  l        1150
+'Brendon Small'  m         950
+'Brendon Small'  n        1150
+'Brendon Small'  o        1600
+'Brendon Small'  p        1300
+'Brendon Small'  q        1050
+'Brendon Small'  r        1300
+'Brendon Small'  s        1700
+'Brendon Small'  t        1300
+'Coach McGuirk'  u        1100
+'Coach McGuirk'  v        1200
+'Coach McGuirk'  w        1250
+'Coach McGuirk'  x        1050
+'Coach McGuirk'  y        1200
+'Coach McGuirk'  z        1250
+'Coach McGuirk'  aa       1350
+'Coach McGuirk'  ab       1350
+'Coach McGuirk'  ac       1325
+'Coach McGuirk'  ad       1525
+'Coach McGuirk'  ae       1225
+'Coach McGuirk'  af       1125
+'Coach McGuirk'  ag       1000
+'Coach McGuirk'  ah       1125
+'Coach McGuirk'  ai       1400
+'Coach McGuirk'  aj       1200
+'Coach McGuirk'  ak       1150
+'Coach McGuirk'  al       1400
+'Coach McGuirk'  am       1500
+'Coach McGuirk'  an       1200
+")
+```
+
+  i) Compare the sodium intake between the two classes. Use the `favstats` function. Comment on what you see.  
+  ii) Create a boxplot and histogram (with a fitted normal density curve) for the sodium intake in the two classes. Is the normal distribution a reasonable assumption for the sodium intake in both classes?  
+  iii) Carry a two-sample t-test with alpha = 0.05 to determine if there is a significant difference in mean sodium intake for the two different classes.  
+  iv) State the results of your t-test. Can you make conclusive statement based on the information in your data? Why?  
+  
+
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
