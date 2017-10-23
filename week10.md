@@ -52,31 +52,14 @@ Inferences on differences between two population means
 
 We consider using sample data to compare two population populations through their population means. An investigator may wish to estimate the difference between two population means or to test hypotheses about this difference. For example, a researcher compares whether the mean CESD scores for Female subjects is different from Male subjects. Here, two populations (Females and Males) are to be compared on the basis on the basis of the respective mean CESD score. Information from two random samples, one from each gender group, could be used to make such a comparison.
 
-### Population Characteristics/Parameters
-
 | Population | Mean  | Standard Deviation |
 |------------|-------|--------------------|
 | 1          | `mu1` | `sigma1`           |
 | 2          | `mu2` | `sigma2`           |
 
-### Sample Characteristics/Statistics
-
-| Population | Sample Size | Mean    |
-|------------|-------------|---------|
-| 1          | `n1`        | `xbar1` |
-| 2          | `n2`        | `xbar2` |
-
 A comparison of means focuses on the difference, `mu1 - mu1`. The two population means are identical `(mu1 = mu2)` when `mu1 - mu1 = 0`. Similarly , `mu1 > mu2` when `mu1 - mu2 > 0` and `mu1 < mu1` when `mu1 - mu2 < 0`.
 
-### Properties of the Sampling Distribution of `xbar1 - xbar2`
-
-For independent random samples from population 1 and population 2.
-
-1.  `Mean(xbar1 - xbar2) = mu1 - mu2`
-2.  `Variance(xbar1 - xbar2) = sigma1/n1 + sigma2/n2`
-3.  If `n1` and `n2` are both large or the population distributions are (approximately) normal, then `xbar1 - xbar2` is also (approximately) normal.
-
-### Hypothesis tests
+### Comparison of the means using hypothesis tests
 
 When comparing two populations means, we conventionally test the null hypothesis (`Ho`) of the form
 `Ho : mu1 - mu2 = hypothesized value`
@@ -93,7 +76,7 @@ The null hypothesis (`Ho`) is equivalent to the claim that the mean CESD score f
 
     t.test( variable ~ group, # formula interface
        alternative = c("two.sided", "less", "greater"), # default is "two.sided""
-       mu = 0, # hypothesized mean difference if different from 0
+       mu = 0, # hypothesized mean difference, default = 0
        var.equal = FALSE,
        conf.level = 0.95,  # change confidence level as needed
        data = DATA # specify data frame
