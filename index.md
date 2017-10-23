@@ -21,6 +21,7 @@ Weekly Lesson  |  Weekly Exercise
 [Week 7: Sampling Variability and Sampling Distribution of the Sample Mean](https://github.com/jpailden/rstatlab/blob/master/week7.md) | [Exercise 7](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week7-Exercise.Rmd)
 [Week 8: Sample Proportion and Confidence Interval](https://github.com/jpailden/rstatlab/blob/master/week8.md) | [Exercise 8](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week8-Exercise.Rmd)
 [Week 9: Inference About the Single Mean](https://github.com/jpailden/rstatlab/blob/master/week9.md) | [Exercise 9](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week9-Exercise.Rmd)
+[Week 10: Comparing Two Populations Using Independent Samples](https://github.com/jpailden/rstatlab/blob/master/week10.md) | [Exercise 10](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week10-Exercise.Rmd)
 
 ***
 #### How to download R?
