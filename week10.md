@@ -75,10 +75,10 @@ The null hypothesis (`Ho`) is equivalent to the claim that the mean CESD score f
 ### Two-sample Student's t procedure in R
 
     t.test( variable ~ group, # formula interface
-       alternative = c("two.sided", "less", "greater"), # default is "two.sided""
+       alternative = c("two.sided", "less", "greater"), # default = "two.sided""
        mu = 0, # hypothesized mean difference, default = 0
-       var.equal = FALSE,
-       conf.level = 0.95,  # change confidence level as needed
+       var.equal = FALSE, # default = FALSE
+       conf.level = 0.95,  # change confidence level as needed, default = 0.95
        data = DATA # specify data frame
        )
 
