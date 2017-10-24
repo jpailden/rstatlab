@@ -1,5 +1,5 @@
 ---
-title: 'Laboratory Exercise Week 9'
+title: 'Laboratory Exercise Week 10'
 author: "Your Name and Section, 10 pts"
 date: "Todays Date"
 output: word_document

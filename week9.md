@@ -5,7 +5,10 @@ written by Junvie Pailden
 ### Load the required package for this lesson.
 
 ``` r
-library(mosaic) # load the package mosaic
+# install the necessary package if it doesn't exist
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package
+library(mosaic)
 ```
 
 Inference on a Single Mean (One Population)
