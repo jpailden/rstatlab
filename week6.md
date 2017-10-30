@@ -5,7 +5,10 @@ written by Junvie Pailden
 ### Load the required package for this lesson.
 
 ``` r
-library(mosaic) # load the package mosaic
+# install the necessary package if it doesn't exist
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package
+library(mosaic)
 ```
 
 Calculations involving the Binomial Distribution
@@ -20,16 +23,16 @@ To generate an outcome from this experiment, we use the `rbinom()` function with
 ``` r
 # generated number of success in 20 trials
 rbinom(n = 1, size = 20, prob = 0.6)
-# [1] 15
+# [1] 14
 ```
 
 We can generate multiple random variable values, say `n = 50`, from the same family `Binomial(size = 20, prob = 0.6)`.
 
 ``` r
 (x <- rbinom(n = 50, size = 20, prob = 0.6)) # generate 50 values
-#  [1]  9 16 15  9 13 14 15 11 18 13 13 14 11 10 11 15 13 15 16 12 16 12 11
-# [24] 12 12 13 11 15  8 12 11 11 12  7 12 11 15 14 10 14 17 11 13 11 11  9
-# [47] 14 14 11 10
+#  [1] 15 11 18 10 11  9 13 11 10  9  8 13 11 12 11 12 12 14 13  6 12 12 12
+# [24] 13 13  7 13 14 15 11 11 10 10 15  9 13 14 11 11 13 16 12 14  8  8 11
+# [47]  8  8 10  8
 histogram(x) # plot a histogram of the generated values
 ```
 
@@ -48,15 +51,15 @@ As of September 16, 2017, Jose Altuva's hitting average was registered at .347. 
 
 ``` r
 (H1 <- rbinom(n = 1, size = 40, prob = 0.357)) # generate 1 possible number of hits in the next 20 games
-# [1] 12
+# [1] 13
 H1000 <- rbinom(n = 1000, size = 40, prob = 0.357) # generate 1000 possible number of hits in the next 20 games
 tally(H1000)
 # X
-#   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23 
-#   3   3  12  17  51  82 109 117 123 115 124  96  64  25  25  20   8   6
+#   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24 
+#  11  18  35  44  86 105 112 109 154 110  89  64  38  12   7   4   1   1
 favstats(H1000)
 #  min Q1 median Q3 max mean   sd    n missing
-#    6 12     14 16  23 14.5 3.02 1000       0
+#    7 12     14 16  24 14.1 2.94 1000       0
 histogram(H1000)
 ```
 
@@ -150,12 +153,12 @@ To generate a sample from any normal distribution, we use the `rnorm` function w
 # 100 generated values from standard normal dist
 z <- rnorm(n = 100, mean = 0, sd = 1)
 z[1:20] # first 20 values
-#  [1]  1.2488 -1.4574  0.7477 -0.4434  0.3446  0.3204  0.0746  0.9607
-#  [9]  1.8124  0.9382  1.4640  0.6659 -0.4938  0.2548  0.3006 -0.8409
-# [17] -0.1851  0.2331  1.0472 -2.1684
+#  [1]  0.0713  0.2847 -0.8873 -3.0568 -0.2208  0.5589  0.8256 -0.7000
+#  [9] -0.7981  1.5600 -0.1627  0.7611 -1.9921 -1.2546  0.3522 -0.0350
+# [17] -1.6696 -0.3122 -1.3867 -0.6253
 favstats(z) # summary statistics
-#    min     Q1 median    Q3  max  mean sd   n missing
-#  -2.28 -0.495 0.0763 0.764 3.01 0.104  1 100       0
+#    min     Q1 median   Q3  max  mean   sd   n missing
+#  -3.06 -0.683 0.0668 0.71 2.52 0.018 1.07 100       0
 histogram(z) # symmetric bell-shaped histogram
 ```
 

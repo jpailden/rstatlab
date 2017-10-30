@@ -7,9 +7,11 @@ written by Junvie Pailden
 For this week, we need to use the package `mosaic` covered in [last week's lesson](https://github.com/jpailden/rstatlab/blob/master/week3.md). We also need to use another package called `dplyr`. The `dplyr` package contains functions that are often used in combination to manage and manipulate data sets in any manner. The data set we need in this lesson is found in the package `gapminder`.
 
 ``` r
-# install.packages(`mosaic`)
-# install.packages(`dplyr`)
-# install.packages(`gapminder`)
+# install the necessary packages if it doesn't exist
+if (!require(mosaic)) install.packages(`mosaic`)
+if (!require(dplyr)) install.packages(`dplyr`)
+if (!require(gapminder)) install.packages(`gapminder`)
+# load the packages
 library(mosaic)
 library(dplyr)
 library(gapminder)
@@ -436,40 +438,40 @@ You can use `sample_n()` and `sample_frac()` to take a random sample of rows: us
 ``` r
 sample_n(gapminder, 10) # randomly sample 10 rows
 # # A tibble: 10 x 6
-#       country continent  year lifeExp       pop  gdpPercap
-#        <fctr>    <fctr> <int>   <dbl>     <int>      <dbl>
-#  1   Ethiopia    Africa  2002  50.725  67946797   530.0535
-#  2 Madagascar    Africa  1997  54.978  14165114   986.2959
-#  3   Paraguay  Americas  2007  71.752   6667147  4172.8385
-#  4  Argentina  Americas  1987  70.774  31620918  9139.6714
-#  5     Gambia    Africa  1967  35.857    439593   734.7829
-#  6      India      Asia  1952  37.373 372000000   546.5657
-#  7   Slovenia    Europe  1982  71.063   1861252 17866.7218
-#  8   Portugal    Europe  1967  66.600   9103000  6361.5180
-#  9    Bahrain      Asia  1997  73.925    598561 20292.0168
-# 10       Oman      Asia  1957  40.080    561977  2242.7466
+#              country continent  year lifeExp      pop  gdpPercap
+#               <fctr>    <fctr> <int>   <dbl>    <int>      <dbl>
+#  1            Guinea    Africa  1982  42.891  4710497   857.2504
+#  2           Comoros    Africa  1972  48.944   250027  1937.5777
+#  3           Belgium    Europe  1997  77.530 10199787 27561.1966
+#  4         Nicaragua  Americas  1952  42.314  1165790  3112.3639
+#  5            Jordan      Asia  1997  69.772  4526235  3645.3796
+#  6         Singapore      Asia  1977  70.795  2325300 11210.0895
+#  7              Iraq      Asia  1952  45.320  5441766  4129.7661
+#  8            Jordan      Asia  2007  72.535  6053193  4519.4612
+#  9         Swaziland    Africa  1972  49.552   480105  3364.8366
+# 10 Equatorial Guinea    Africa  1967  38.987   259864   915.5960
 
 sample_frac(gapminder, 0.01) # randomly sample 1% of the data
 # # A tibble: 17 x 6
-#                country continent  year lifeExp        pop  gdpPercap
-#                 <fctr>    <fctr> <int>   <dbl>      <int>      <dbl>
-#  1 Trinidad and Tobago  Americas  1972  65.900     975199  6619.5514
-#  2             Morocco    Africa  1982  59.650   20198730  2702.6204
-#  3               Spain    Europe  1957  66.660   29841614  4564.8024
-#  4          Mozambique    Africa  2007  42.082   19951656   823.6856
-#  5         Puerto Rico  Americas  1992  73.911    3585176 14641.5871
-#  6          Montenegro    Europe  1972  70.636     527678  7778.4140
-#  7               China      Asia  1992  68.690 1164970000  1655.7842
-#  8         Congo, Rep.    Africa  1977  55.625    1536769  3259.1790
-#  9               Kenya    Africa  2002  50.992   31386842  1287.5147
-# 10         Netherlands    Europe  1977  75.240   13852989 21209.0592
-# 11             Ecuador  Americas  1952  48.357    3548753  3522.1107
-# 12              Guinea    Africa  2007  56.007    9947814   942.6542
-# 13             Senegal    Africa  1987  55.769    7171347  1441.7207
-# 14           Argentina  Americas  1992  71.868   33958947  9308.4187
-# 15         Philippines      Asia  1992  66.458   67185766  2279.3240
-# 16            Bulgaria    Europe  2007  73.005    7322858 10680.7928
-# 17             Denmark    Europe  1982  74.630    5117810 21688.0405
+#        country continent  year lifeExp       pop   gdpPercap
+#         <fctr>    <fctr> <int>   <dbl>     <int>       <dbl>
+#  1    Colombia  Americas  1997  70.313  37657830   6117.3617
+#  2   Singapore      Asia  1997  77.158   3802309  33519.4766
+#  3     Uruguay  Americas  1962  68.253   2598466   5603.3577
+#  4      Brazil  Americas  1972  59.504 100840058   4985.7115
+#  5    Botswana    Africa  1952  47.622    442308    851.2411
+#  6      Poland    Europe  1982  71.320  36227381   8451.5310
+#  7    Bulgaria    Europe  1987  71.340   8971958   8239.8548
+#  8      Kuwait      Asia  1952  55.565    160000 108382.3529
+#  9     Namibia    Africa  1987  60.835   1278184   3693.7313
+# 10      Gambia    Africa  2002  58.041   1457766    660.5856
+# 11    Portugal    Europe  2002  77.290  10433867  19970.9079
+# 12 Afghanistan      Asia  2002  42.129  25268405    726.7341
+# 13    Thailand      Asia  1977  62.494  44148285   1961.2246
+# 14      Taiwan      Asia  1987  73.400  19757799  11054.5618
+# 15       Nepal      Asia  1992  55.727  20326209    897.7404
+# 16      Norway    Europe  1972  74.340   3933004  18965.0555
+# 17     Germany    Europe  1977  72.500  78160773  20512.9212
 ```
 
 Use `replace = TRUE` to perform random selection with replacement. More on this next week.

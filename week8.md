@@ -5,7 +5,10 @@ written by Junvie Pailden
 ### Load the required package for this lesson.
 
 ``` r
-library(mosaic) # load the package mosaic
+# install the necessary package if it doesn't exist
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package
+library(mosaic)
 ```
 
 Sample Proportion and Conversion Rates
@@ -78,13 +81,13 @@ histogram(X1/500, xlab = "Sample Conversion Rates", fit = "Normal")  # histogram
 
 ``` r
 mean(~ X1) # sample mean of X
-# [1] 51.4
+# [1] 48.2
 mean(~ X1/500) # sample mean of X/n
-# [1] 0.103
+# [1] 0.0964
 sd(~ X1) # sample std deviation of X
-# [1] 7.5
+# [1] 6.46
 sd(~ X1/500) # sample std deviation of X/n
-# [1] 0.015
+# [1] 0.0129
 ```
 
 In this experiment, the population characteristics of `X` and `X/500`

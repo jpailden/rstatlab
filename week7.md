@@ -5,7 +5,10 @@ written by Junvie Pailden
 ### Load the required package for this lesson.
 
 ``` r
-library(mosaic) # load the package mosaic
+# install the necessary package if it doesn't exist
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package
+library(mosaic)
 ```
 
 Statistics and Sampling Variability
@@ -69,45 +72,39 @@ Let us select a random sample of 5 CEO's from this population and compute the sa
 ``` r
 # randomly select rows without replacement using `sample_n`
 (samp1 <- sample_n(ceo_salary, size = 5)) 
-#     Rank               Name                                 Company
-# 130  130 Richard H Anderson                         Delta Air Lines
-# 486  486   Wendy C Waugaman American Equity Investment Life Holding
-# 137  137       Leonard Bell                 Alexion Pharmaceuticals
-# 247  247  Brian Duperreault                    Marsh & McLennan Cos
-# 303  303    Mark S McAndrew                               Torchmark
-#     Annual.pay Age
-# 130     13.175  56
-# 486      0.915  51
-# 137     12.715  53
-# 247      7.045  64
-# 303      5.600  61
+#     Rank                 Name                       Company Annual.pay Age
+# 52    52         John F Brock         Coca-Cola Enterprises      21.18  63
+# 182  182       Angela F Braly                     WellPoint       9.49  50
+# 87    87        Glenn A Britt             Time Warner Cable      16.55  62
+# 74    74 Michael E Szymanczyk                  Altria Group      17.86  63
+# 456  456       John R Koelmel First Niagara Financial Group       2.07  58
 (xbar1 <- mean(~ Annual.pay, data = samp1))
-# [1] 7.89
+# [1] 13.4
 ```
 
-The sample mean salary of $7.89 Mil for the 5 CEO's selected in sample 1 is different from the population mean salary $10.539 Mil by about $-2.649 Mil.
+The sample mean salary of $13.431 Mil for the 5 CEO's selected in sample 1 is different from the population mean salary $10.539 Mil by about $2.892 Mil.
 
 Is this difference in sample mean salary common, or is this particular sample mean salary unusually far away from the true mean? Taking more samples will provide some additional insight.
 
 ``` r
 (samp2 <- sample_n(ceo_salary, size = 5))
-#     Rank            Name          Company Annual.pay Age
-# 252  252 Wendell P Weeks          Corning       6.93  52
-# 193  193    John F Coyne  Western Digital       9.06  62
-# 311  311 Robert Greifeld Nasdaq OMX Group       5.25  54
-# 134  134      Hugh Grant         Monsanto      12.84  54
-# 429  428   John P Jumper             SAIC       2.75  67
+#     Rank            Name              Company Annual.pay Age
+# 202  202     Alex Gorsky    Johnson & Johnson       8.65  51
+# 294  294   Jay M Gellert           Health Net       5.79  58
+# 372  372  Peter Swinburn Molson Coors Brewing       3.94  59
+# 55    55 Michael Balmuth          Ross Stores      20.82  61
+# 177  177 Sanjay Mehrotra              SanDisk       9.68  53
 (xbar2 <- mean(~ Annual.pay, data = samp2))
-# [1] 7.37
+# [1] 9.77
 (samp3 <- sample_n(ceo_salary, size = 5))
-#     Rank             Name               Company Annual.pay Age
-# 454  454  Edward J Bonach         CNO Financial       2.08  58
-# 304  304    Harold G Hamm Continental Resources       5.50  66
-# 318  318   Dennis R Glass      Lincoln National       5.04  62
-# 118  118 Scott A McGregor              Broadcom      14.01  56
-# 95    95    James J Mulva        ConocoPhillips      15.62  65
+#     Rank               Name                Company Annual.pay Age
+# 328  328      Lee K Boothby   Newfield Exploration       4.79  50
+# 140  140    Daniel C Ustian Navistar International      12.51  61
+# 4      4   Richard D Kinder          Kinder Morgan      60.94  67
+# 29    29  William R Berkley             WR Berkley      29.00  66
+# 156  156 Kenneth I Chenault       American Express      10.92  60
 (xbar3 <- mean(~ Annual.pay, data = samp3))
-# [1] 8.45
+# [1] 23.6
 ```
 
 Let us repeat this process of selecting a random sample and computing the sample mean 500 times. The `do()` function in the `mosaic` package repeats some operation many times, and collects the results in a data frame.
@@ -118,18 +115,18 @@ simulated.means <- do(500)*mean(~ Annual.pay,
 # data frame containing the 500 computed sample means
 head(simulated.means)
 #    mean
-# 1 12.88
-# 2  3.70
-# 3 16.25
-# 4 15.76
-# 5  6.26
-# 6  6.97
+# 1 12.44
+# 2 10.47
+# 3 35.10
+# 4  5.05
+# 5  8.12
+# 6 11.91
 # mean of the sample means
 (mu.xbar <- mean(~ mean, data = simulated.means))
-# [1] 10.5
+# [1] 10.8
 # standard deviaton of the sample means
 (std.xbar <- sd(~ mean, data = simulated.means))
-# [1] 4.76
+# [1] 5.46
 # histogram of the sample means
 histogram(~ mean, data = simulated.means, 
           main = "Sample Mean Salary Distribution", 
@@ -142,15 +139,15 @@ The figure above is a density histogram of the 500 sample mean salaries computed
 
 > Sampling distribution: The distribution that would be formed by considering the value of a sample statistic for every possible different sample of a given size from a population.
 
-The center of the sample mean distribution 10.491 is very close to the value of the population mean salary 10.539.
+The center of the sample mean distribution 10.765 is very close to the value of the population mean salary 10.539.
 
 ``` r
 # true mean, and average of the sample means
 c(mu, mu.xbar)
-# [1] 10.5 10.5
+# [1] 10.5 10.8
 # true standard deviation, and standard deviation of the sample means
 c(sigma, std.xbar)
-# [1] 11.47  4.76
+# [1] 11.47  5.46
 sigma/sqrt(5)
 # [1] 5.13
 ```

@@ -7,8 +7,10 @@ written by Junvie Pailden
 The `mosaic` package was written to simplify the use of R for introductory statistics courses. A short summary of the R needed to teach introductory statistics can be found in the mosaic package vignettes (<http://cran.r-project.org/web/packages/mosaic>).
 
 ``` r
-install.packages("mosaic") # need to run this line only once
-library(mosaic)            # load the package everytime you want to use its functions
+# install mosaic package if it doesn't exist
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package in R
+library(mosaic)
 ```
 
 Numerical Summaries
@@ -202,7 +204,7 @@ Recall the flight delays data from last week's session. Load this data set using
 
 ``` r
 getwd() # location of current working directory
-# [1] "C:/Users/Pailden/Google Drive/SIUE_Class/rstatlab/rstatlab"
+# [1] "/Users/JPMac/Google Drive/SIUE_Class/rstatlab/rstatlab/data"
 delay <- read.csv("flight.delay.csv", header = TRUE) # load the data
 favstats(~ Rate.per.10K.Flights, data = delay)
 #  min  Q1 median  Q3 max mean  sd  n missing
