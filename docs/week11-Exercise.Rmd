@@ -47,8 +47,8 @@ TBBMC
 
   i) Compute the differences in the TBBMC between "during lactation" and "postweaning period". Assign this new column into the same data set.  
   ii) Compute summary statistics (mean and standard deviation) on this new column of differences.  
-  iii) Compute a 95\% confidence interval for the mean difference in TBBMC between "during lactation" and "postweaning period". 
-  iv) Based on the computed confidence interval, does the data suggest mean TBBMC is different between "during lactation" and "postweaning period".  
+  iii) Compute a 95\% confidence interval for the mean difference in TBBMC between "during lactation" and "postweaning period".    
+  iv) Based on the computed confidence interval, does the data suggest mean TBBMC is different between "during lactation" and "postweaning period".    
   v) Compute the (incorrect)  two-sample t-interval on the data. See Week 10 lesson on how to do this. Does the (incorrect) two-sample t-interval lead to the same conclusion that you obtained in part (iv)? Explain.
 
 
@@ -69,8 +69,8 @@ airborne <- read.csv("https://www.siue.edu/~jpailde/airborne.csv", header = TRUE
 airborne
 ```
 
-  i) Compute the sample mean and sample standard deviation `concentration` for both `indoor` and `outdoor`. 
-  ii) Construct boxplots for the `concentration` for both `indoor` and `outdoor`.  
+  i) Compute the sample mean and sample standard deviation `concentration` for both `indoor` and `outdoor`.   
+  ii) Construct boxplots for the `concentration` for both `indoor` and `outdoor`.    
   iii) Based on what you see in parts (i) and (ii), do you suspect the `concentration` levels for indoor and outdoor are different? Why?  
   iv) Is a paired sample analysis appropriate for this data? Why?  
   v) Calculate a confidence interval for the population mean difference between indoor and outdoor concentrations using a confidence interval of 95\%, and interpret the resulting interval.  
