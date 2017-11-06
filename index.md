@@ -22,7 +22,8 @@ Weekly Lesson  |  Weekly Exercise
 [Week 8: Sample Proportion and Confidence Interval](https://github.com/jpailden/rstatlab/blob/master/week8.md) | [Exercise 8](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week8-Exercise.Rmd)
 [Week 9: Inference About the Single Mean](https://github.com/jpailden/rstatlab/blob/master/week9.md) | [Exercise 9](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week9-Exercise.Rmd)
 [Week 10: Comparing Two Populations Using Independent Samples](https://github.com/jpailden/rstatlab/blob/master/week10.md) | [Exercise 10](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week10-Exercise.Rmd) 
-[Week 11: Analysis on Paired Data](https://github.com/jpailden/rstatlab/blob/master/week11.md) | [Exercise 11](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week11-Exercise.Rmd)
+[Week 11: Analysis on Paired Data](https://github.com/jpailden/rstatlab/blob/master/week11.md) | [Exercise 11](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week11-Exercise.Rmd)  
+[Week 12: Describing Relationships Between Quantitative Variables](https://github.com/jpailden/rstatlab/blob/master/week12.md) | [Exercise 12](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week12-Exercise.Rmd)
 
 ***
 #### How to download R?
