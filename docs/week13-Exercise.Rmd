@@ -56,10 +56,10 @@ saleprice <- read.csv("https://www.siue.edu/~jpailde/saleprice.csv")
 saleprice
 ```
 
-  i) Construct a scatterpot for `sale price versus size` and `sale price versus land-to-building ratio`. Be sure to fit regression lines on the scatterplots.  
-  ii) Use the `lm` function to estimated the equations of each regression model for `sale price versus size` and `sale price versus land-to-building ratio`.
-  iii) Check the error model assumption visually by constructing a residual plot and QQplot of the residuals for the two models.
-  iv) Estimate the population regression slope of each model (line) by constructing 95\% confidence interval. Give a brief interpretation of the esimated slope in the context of the problem.  
+  i) Construct a scatterpot for `sale price versus size` and `sale price versus land-to-building ratio`. Be sure to fit regression lines on the scatterplots.    
+  ii) Use the `lm` function to estimated the equations of each regression model for `sale price versus size` and `sale price versus land-to-building ratio`.  
+  iii) Check the error model assumption visually by constructing a residual plot and QQplot of the residuals for the two models.  
+  iv) Estimate the population regression slope of each model (line) by constructing 95\% confidence interval. Give a brief interpretation of the esimated slope in the context of the problem.    
   v) Perform a hypothesis test on the regression slope of each model (line), use a 5\% level of significance. Given an appropriate conclusion.
 
 ### Code chunk
