@@ -24,7 +24,8 @@ Weekly Lesson  |  Weekly Exercise
 [Week 10: Comparing Two Populations Using Independent Samples](https://github.com/jpailden/rstatlab/blob/master/week10.md) | [Exercise 10](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week10-Exercise.Rmd) 
 [Week 11: Analysis on Paired Data](https://github.com/jpailden/rstatlab/blob/master/week11.md) | [Exercise 11](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week11-Exercise.Rmd)  
 [Week 12: Describing Relationships Between Quantitative Variables](https://github.com/jpailden/rstatlab/blob/master/week12.md) | [Exercise 12](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week12-Exercise.Rmd)  
-[Week 13: Simple Linear Regression Analysis](https://github.com/jpailden/rstatlab/blob/master/week13.md) | [Exercise 13](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week13-Exercise.Rmd)
+[Week 13: Simple Linear Regression Analysis](https://github.com/jpailden/rstatlab/blob/master/week13.md) | [Exercise 13](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week13-Exercise.Rmd)  
+[Week 14: Multiple Regression Analysis](https://github.com/jpailden/rstatlab/blob/master/week14.md) | [Exercise 14](https://raw.githubusercontent.com/jpailden/rstatlab/master/docs/week14-Exercise.Rmd)
 
 ***
 #### How to download R?
