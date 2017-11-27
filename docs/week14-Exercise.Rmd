@@ -39,4 +39,13 @@ summary(lm(Price ~ Size + Ratio, saleprice))
   iii) Predict the catch time for two animals whose lengths are 4 and 6; and whose speeds are 30 and 60, respectively. State your result in paragraph form including the associated prediction intervals.  
   iv) Is the multiple regression model useful for predicting catch time? Use `R2`, `adj-R2`, and test the relevant hypothesis using `alpha = 0.05`. State your conclusion.  
   v) The primary researchers suggest that a simple regression model with the single predictor `x = length/speed` might be a better model for predicting catch time. Calculate and add the `x` values to the data using the function `mutate` in the package `dplyr`. Fit a simple linear regression model using the new variable/column `x`.   
-  vi) Which of the two models considered (the multiple regression model in part (i) or the simple regression model in part (v)) would you recommend for predicting catch time? Justify your choice.  
+  vi) Which of the two models considered (the multiple regression model in part (i) or the simple regression model in part (v)) would you recommend for predicting catch time? Justify your choice.   
+  
+  
+### Code chunk
+```{r} 
+# start your code
+
+
+# last R code line
+```
