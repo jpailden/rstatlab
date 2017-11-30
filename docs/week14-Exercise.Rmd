@@ -31,7 +31,6 @@ library(dplyr)
 ```{r}
 prey <- read.csv("https://www.siue.edu/~jpailde/prey.csv")
 prey
-summary(lm(Price ~ Size + Ratio, saleprice))
 ```
 
   i) Fit a multiple regression model for predicting catch time using prey length and speed as predictors.  
