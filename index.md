@@ -8,7 +8,7 @@ Starting Fall 2017, Stat 244 and Stat 380 will be using R software for all labor
 
 ***
 
-### Weekly Materials (15 sets)
+### Weekly Materials
 
 Weekly Lesson  |  Weekly Exercise
 ---------------|-----------
