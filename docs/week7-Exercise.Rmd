@@ -21,7 +21,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
 
-```{r}
+
+```{r warning=FALSE, message=FALSE}
+# install package if necessary
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package in R
 library(mosaic) # load the package mosaic to use its functions
 ```
 

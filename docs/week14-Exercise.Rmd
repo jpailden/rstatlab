@@ -21,17 +21,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this exercise, you will need to use the packages `mosaic` and `dplyr` to find numerical and graphical summaries.
 
-```{r}
-library(mosaic)
-library(dplyr)
+
+```{r warning=FALSE, message=FALSE}
+# install packages if necessary
+if (!require(mosaic)) install.packages(`mosaic`)
+if (!require(dplyr)) install.packages(`dplyr`)
+# load the package in R
+library(mosaic) # load the package mosaic to use its functions
+library(dplyr) # load the package dplyr to use data management functions
 ```
+
 
 1. Researchers found that the speed of a prey (twips/s) and the length of prey (twips x 100) are good predictors of the time (s) required to catch a prey. (A twip is a measure of distance used by programmers). Data were collected in an experiment in which subjects were asked to "catch" an animal prey moving across his or her computer screen by clicking on it with the mouse. The investigators varied the length of the prey and the speed with which prey moved across the screen.
 
 ```{r}
 prey <- read.csv("https://www.siue.edu/~jpailde/prey.csv")
 prey
-summary(lm(Price ~ Size + Ratio, saleprice))
 ```
 
   i) Fit a multiple regression model for predicting catch time using prey length and speed as predictors.  

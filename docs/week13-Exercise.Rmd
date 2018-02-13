@@ -21,10 +21,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this exercise, you will need to use the packages `mosaic` and `dplyr` to find numerical and graphical summaries.
 
-```{r}
-library(mosaic)
-library(dplyr)
+
+```{r warning=FALSE, message=FALSE}
+# install packages if necessary
+if (!require(mosaic)) install.packages(`mosaic`)
+if (!require(dplyr)) install.packages(`dplyr`)
+# load the package in R
+library(mosaic) # load the package mosaic to use its functions
+library(dplyr) # load the package dplyr to use data management functions
 ```
+
 
 1. Data from the US Federal Reserve Board (2002) on the percentage of disposable personal income required to meet consumer load payments and mortgage payments for selected years are found in the data below
 

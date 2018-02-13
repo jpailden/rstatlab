@@ -21,9 +21,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this exercise, you will need to use the package `mosaic` to find numerical and graphical summaries.
 
-```{r}
+
+```{r warning=FALSE, message=FALSE}
+# install package if necessary
+if (!require(mosaic)) install.packages(`mosaic`)
+# load the package in R
 library(mosaic) # load the package mosaic to use its functions
 ```
+
 
 1. The study "Digital Footprints" ([Pew Internet and American Life Project]("Digital Footprints" (Pew Internet and American Life Project)) reported that 47\% of Internet users have searched for information about themselves online. The 47\% figure was based on a random sample of Internet users. Suppose that the sample size was `n = 400`.  
 

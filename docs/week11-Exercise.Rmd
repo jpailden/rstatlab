@@ -21,10 +21,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this exercise, you will need to use the packages `mosaic` and `dplyr` to find numerical and graphical summaries.
 
-```{r}
-library(mosaic)
-library(dplyr)
+
+
+```{r warning=FALSE, message=FALSE}
+# install packages if necessary
+if (!require(mosaic)) install.packages(`mosaic`)
+if (!require(dplyr)) install.packages(`dplyr`)
+# load the package in R
+library(mosaic) # load the package mosaic to use its functions
+library(dplyr) # load the package dplyr to use data management functions
 ```
+
+
 
 1. Lactation promotes a temporary loss of bone mass to provide adequate amounts of calcium for milk reproduction. The paper ["Bone Mass is Recovered from Lactation to Postweaning in Adolescent in Adolescent Mothers with Low Calcium Intakes"](https://www.ncbi.nlm.nih.gov/pubmed/15531682) gave the following data on total body bone mineral content (TBBMC) (g) for a sample both during lactation (L) and in the postweaning period (P).  
 
@@ -66,7 +74,8 @@ TBBMC
 
 ```{r}
 airborne <- read.csv("https://www.siue.edu/~jpailde/airborne.csv", header = TRUE)
-airborne
+head(airborne) # display first 6 rows
+tail(airborne) # display last 6 rows
 ```
 
   i) Compute the sample mean and sample standard deviation `concentration` for both `indoor` and `outdoor`.   

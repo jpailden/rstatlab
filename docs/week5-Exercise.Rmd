@@ -21,10 +21,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For this exercise, you will need to use the packages `mosaic` and `dplyr`.
 
-```{r}
+
+```{r warning=FALSE, message=FALSE}
+# install packages if necessary
+if (!require(mosaic)) install.packages(`mosaic`)
+if (!require(dplyr)) install.packages(`dplyr`)
+# load the package in R
 library(mosaic) # load the package mosaic to use its functions
 library(dplyr) # load the package dplyr to use data management functions
 ```
+
+
 
 
 1. For decades it's been suspected that schizophrenia involves anatomical abnormalities in the hippocampus, an area of the brain involved with memory. The following data bearing on this issue are from Suddath et al. (1990) and were used by Ramsey and Schafer (3rd ed., 2013, p. 31. Display 2.2). The researchers obtained MRI measurements of the volume of the left hippocampus from 15 pairs of identical twins discordant for schizophrenia, i.e, one the twin is affected with schizophrenia The data are displayed in the following table. 
