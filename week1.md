@@ -189,6 +189,19 @@ seq.len[1:5] # displays the first 5 entries
 # [1] 1 3 5 7 9
 ```
 
+Displaying Objects in R
+-----------------------
+
+You can display an object in two ways after storing it. The first is by typing the name of the object in a separate line and running the same line. Another is by enclosing the entire command/code in parentheses.
+
+``` r
+seq.rev <- seq(from = 12, to = 0, by = -2) 
+seq.rev 
+# [1] 12 10  8  6  4  2  0
+(seq.rev <- seq(from = 12, to = 0, by = -2)) 
+# [1] 12 10  8  6  4  2  0
+```
+
 The R Help System
 -----------------
 
@@ -201,8 +214,7 @@ For example, when looking for information on computing the average or mean of a 
 
 ``` r
 help("mean") # or
-# starting httpd help server ...
-#  done
+# starting httpd help server ... done
 ?mean        # scroll to the bottom to see examples
 x <- c(0:10, 50)
 x
@@ -212,3 +224,10 @@ mean(x)
 ```
 
 ------------------------------------------------------------------------
+
+Some Useful R Documentations
+----------------------------
+
+1.  [R Data Types](https://www.statmethods.net/input/datatypes.html)
+2.  [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)
+3.  [R Markdown - Dynamic Documents for R](https://support.rstudio.com/hc/en-us/articles/205368677-R-Markdown-Dynamic-Documents-for-R)
