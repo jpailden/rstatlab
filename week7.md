@@ -194,7 +194,7 @@ When the sample means are computed from randomly selected samples, we have the f
 
 1.  The average of the sample means is the true sample mean.
 
-2.  The standard deviation of the sample means is the true standard deviation divided by the square root of the sample mean.
+2.  The standard deviation of the sample means is the true standard deviation divided by the square root of the sample size.
 
 3.  If the original population is normal, the sampling distribution of the sample mean is also normal.
 
